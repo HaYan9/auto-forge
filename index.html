@@ -13,11 +13,100 @@
   --glow-gold:0 0 18px #f0c04080,0 0 36px #f0c04040;
   --glow-red:0 0 20px #ff3a3a90;--glow-green:0 0 18px #38d87880;
   --sc:#aaa;
+  --panel-bg:linear-gradient(160deg,#110f1e,#0d0b17);
+  --font-scale:1;
 }
+/* Light theme */
+body.theme-light{
+  --bg:#f5f0e8;--border:#c0b8a8;
+  --gold:#9a6e00;--red:#cc2020;--blue:#1a5acc;--green:#187838;
+  --text:#1a140c;--dim:#7a6858;
+  --glow-gold:none;--glow-red:none;--glow-green:none;
+  --panel-bg:linear-gradient(160deg,#eee8de,#e6e0d4);
+}
+/* Backgrounds */
+body.theme-light{background:#f5f0e8;}
+body.theme-light body::before{background:radial-gradient(ellipse at 20% 50%,#d8c89020,transparent 60%),radial-gradient(ellipse at 80% 20%,#c8d8e820,transparent 60%);}
+body.theme-light::before{background:radial-gradient(ellipse at 20% 50%,#d8c89020,transparent 60%),radial-gradient(ellipse at 80% 20%,#c8d8e820,transparent 60%);}
+body.theme-light .star{background:#c09060;opacity:.4;}
+/* Panels and cards */
+body.theme-light .panel,
+body.theme-light .acfg-box,
+body.theme-light .settings-box,
+body.theme-light .info-box,
+body.theme-light .res-box,
+body.theme-light .cfm-box,
+body.theme-light .rcfm-box,
+body.theme-light .changelog-box{background:var(--panel-bg);border-color:var(--border);}
+body.theme-light .sword-arena::before{background:radial-gradient(ellipse at 50% 50%,#c0a04018,transparent 70%);}
+body.theme-light .sbox,
+body.theme-light .sbox2,
+body.theme-light .enh-info-item,
+body.theme-light .scard,
+body.theme-light .version-row{background:#ddd8cc;border-color:#bbb0a0;}
+body.theme-light .chk-row,
+body.theme-light .acfg-chk-row,
+body.theme-light .acfg-sell-row{background:#ddd8cc;border-color:#bbb0a0;}
+body.theme-light .gold-bar{background:#e0d8ca;border-color:#c0b8a8;}
+/* Bars */
+body.theme-light .pbar-bg,
+body.theme-light .vol-slider{background:#c8c0b0;}
+/* Tabs */
+body.theme-light .tabs{border-color:var(--border);}
+body.theme-light .tab{background:#ddd8cc;color:var(--dim);}
+body.theme-light .tab.active{background:#ccc4b4;color:var(--gold);font-weight:700;}
+body.theme-light .tab:hover:not(.active){color:var(--text);}
+/* Buttons */
+body.theme-light .big-btn.btn-gold{background:linear-gradient(135deg,#e8d090,#d4b870);border-color:var(--gold);color:#5a3800;}
+body.theme-light .big-btn.btn-auto{background:linear-gradient(135deg,#c8d8e8,#b8c8d8);border-color:var(--blue);color:#0a2860;}
+body.theme-light .big-btn.btn-auto.on{background:linear-gradient(135deg,#e8c8c8,#d8b0b0);border-color:var(--red);color:#600a0a;}
+body.theme-light .big-btn.btn-green{background:linear-gradient(135deg,#b8d8b8,#a0c8a0);border-color:var(--green);color:#082808;}
+body.theme-light .big-btn:disabled{background:#d0c8bc!important;opacity:.5;}
+body.theme-light .info-btn{background:#ddd8cc;border-color:#bbb0a0;color:var(--dim);}
+body.theme-light .info-btn:hover{border-color:var(--gold);color:var(--gold);}
+body.theme-light .sbuy{border-color:var(--gold);color:var(--gold);}
+body.theme-light .sbuy:hover:not(:disabled){background:#e8d890;}
+body.theme-light .sbuy:disabled{border-color:#bbb0a0;color:#bbb0a0;}
+body.theme-light .qbtn{background:#ddd8cc;border-color:#bbb0a0;color:var(--text);}
+body.theme-light .cfm-yes{border-color:var(--green);color:var(--green);}
+body.theme-light .cfm-no{border-color:var(--border);color:var(--dim);}
+body.theme-light .rcfm-yes{border-color:var(--blue);color:var(--blue);}
+body.theme-light .acfg-start{border-color:var(--green);color:var(--green);}
+body.theme-light .acfg-cancel{border-color:var(--border);color:var(--dim);}
+body.theme-light .acfg-start:disabled{border-color:#bbb0a0;color:#bbb0a0;}
+body.theme-light .mute-btn,
+body.theme-light .settings-close,
+body.theme-light .info-close,
+body.theme-light .changelog-close,
+body.theme-light .res-close{background:#ddd8cc;border-color:#bbb0a0;color:var(--text);}
+body.theme-light .save-btn{border-color:var(--blue);color:var(--blue);}
+body.theme-light .load-btn{border-color:var(--green);color:var(--green);}
+body.theme-light .acfg-radio{background:#ddd8cc;border-color:#bbb0a0;color:var(--dim);}
+body.theme-light .acfg-radio.selected{background:#c8d8e8;border-color:var(--blue);color:var(--blue);}
+body.theme-light .enh-stop-btn{border-color:var(--red);color:var(--red);}
+/* Log and table */
+body.theme-light .log-list li{border-bottom-color:#c8c0b0;color:#6a5840;}
+body.theme-light .log-list li.lok{color:var(--gold);}
+body.theme-light .log-list li.lfail{color:var(--red);}
+body.theme-light .log-list li.lblue{color:var(--blue);}
+body.theme-light .info-table td{border-bottom-color:#c8c0b0;}
+body.theme-light .info-table tr:hover td{background:#ddd8cc;}
+body.theme-light .cv-header{border-bottom-color:#c8c0b0;}
+body.theme-light .cv-items li{color:var(--text);}
+/* Overlay backdrops */
+body.theme-light .enh-overlay,
+body.theme-light .info-modal,
+body.theme-light .res-overlay,
+body.theme-light .cfm-overlay,
+body.theme-light .rcfm-overlay,
+body.theme-light .acfg-overlay,
+body.theme-light .settings-modal,
+body.theme-light .changelog-modal{background:#00000060;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--text);font-family:'Noto Serif KR',serif;
   min-height:100vh;display:flex;flex-direction:column;align-items:center;
   padding:16px 12px 40px;overflow-x:hidden;}
+.panel{background:var(--panel-bg);border:1px solid var(--border);border-radius:14px;padding:18px 16px;margin-bottom:13px;}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(ellipse at 20% 50%,#1a0a3050,transparent 60%),
              radial-gradient(ellipse at 80% 20%,#0a1a3050,transparent 60%),
@@ -39,7 +128,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
   text-align:center;color:var(--gold);text-shadow:var(--glow-gold);margin-bottom:4px;letter-spacing:2px;}
 .subtitle{text-align:center;color:var(--dim);font-size:.75rem;margin-bottom:20px;letter-spacing:3px;text-transform:uppercase;}
 
-.panel{background:linear-gradient(160deg,#110f1e,#0d0b17);border:1px solid var(--border);border-radius:14px;padding:18px 16px;margin-bottom:13px;}
+
 .ptitle{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--dim);
   margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .ptitle::after{content:'';flex:1;height:1px;background:var(--border);}
@@ -51,11 +140,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
 @keyframes float{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-8px) rotate(4deg);}}
 .sword-name{font-size:clamp(1.1rem,3.5vw,1.5rem);font-weight:900;color:var(--sc);text-shadow:0 0 16px var(--sc);margin-bottom:3px;transition:all .4s;}
 .sword-lvl{font-size:.9rem;color:var(--gold);letter-spacing:2px;margin-bottom:12px;}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
-.sbox{background:#0a0a16;border:1px solid #1e1c30;border-radius:9px;padding:9px 5px;text-align:center;}
-.slabel{font-size:.58rem;color:var(--dim);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
-.sval{font-size:1rem;font-weight:700;}
-.sval.atk{color:#ff7030;}.sval.def{color:#38a0ff;}.sval.spd{color:#38d878;}
+
 
 .gold-bar{display:flex;align-items:center;justify-content:center;gap:10px;
   margin-bottom:13px;padding:10px;background:#0c0a18;border:1px solid var(--border);border-radius:10px;font-size:.85rem;color:var(--gold);}
@@ -151,11 +236,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
   color:var(--red);font-family:inherit;font-size:.85rem;font-weight:700;cursor:pointer;display:none;letter-spacing:1px;}
 .enh-stop-btn:hover{background:#200808;}
 .enh-stop-btn.show{display:inline-block;}
-.enh-skip-btn{padding:8px 22px;border-radius:9px;border:1px solid #443860;background:transparent;
-  color:#887890;font-family:inherit;font-size:.78rem;cursor:pointer;display:none;margin-left:8px;transition:all .2s;}
-.enh-skip-btn:hover{border-color:var(--gold);color:var(--gold);}
-.enh-skip-btn.show{display:inline-block;}
-.enh-btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+
 .spark{position:absolute;border-radius:50%;animation:spkfly var(--sd) ease-out forwards;}
 @keyframes spkfly{0%{transform:translate(-50%,-50%) scale(1);opacity:1;}100%{transform:translate(calc(-50% + var(--sx)),calc(-50% + var(--sy))) scale(0);opacity:0;}}
 
@@ -301,6 +382,40 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
 .settings-close{margin-top:14px;width:100%;padding:10px;border-radius:9px;border:1px solid var(--border);
   background:transparent;color:var(--dim);font-family:inherit;font-size:.82rem;cursor:pointer;}
 .settings-close:hover{border-color:var(--gold);color:var(--gold);}
+/* Version + Changelog */
+.version-row{display:flex;align-items:center;justify-content:space-between;
+  margin-top:14px;padding:10px 12px;background:#0a0816;border:1px solid var(--border);border-radius:9px;}
+.version-label{font-size:.72rem;color:var(--dim);}
+.version-num{font-size:.82rem;font-weight:700;color:var(--gold);}
+.changelog-btn{font-size:.72rem;color:var(--blue);background:transparent;border:none;
+  cursor:pointer;font-family:inherit;text-decoration:underline;padding:0;}
+.changelog-btn:hover{color:var(--gold);}
+.changelog-modal{position:fixed;inset:0;z-index:240;display:flex;align-items:center;justify-content:center;
+  background:#000000c0;opacity:0;pointer-events:none;transition:opacity .2s;backdrop-filter:blur(5px);}
+.changelog-modal.show{opacity:1;pointer-events:all;}
+.changelog-box{background:#110f1e;border:1px solid var(--border);border-radius:14px;padding:22px 18px;
+  max-width:420px;width:94%;max-height:82vh;overflow-y:auto;
+  transform:scale(.88);transition:transform .25s cubic-bezier(.34,1.56,.64,1);}
+.changelog-modal.show .changelog-box{transform:scale(1);}
+.changelog-title{font-size:1rem;font-weight:900;color:var(--gold);margin-bottom:16px;text-align:center;}
+.changelog-version{margin-bottom:16px;}
+.cv-header{display:flex;align-items:baseline;gap:8px;margin-bottom:7px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.cv-ver{font-size:.88rem;font-weight:900;color:var(--gold);}
+.cv-date{font-size:.7rem;color:var(--dim);}
+.cv-tag{font-size:.62rem;padding:2px 7px;border-radius:10px;font-weight:700;}
+.cv-tag.major{background:#1a1428;color:var(--blue);border:1px solid var(--blue);}
+.cv-tag.minor{background:#0a1408;color:var(--green);border:1px solid var(--green);}
+.cv-tag.fix{background:#180808;color:var(--red);border:1px solid var(--red);}
+.cv-items{list-style:none;padding:0;}
+.cv-items li{font-size:.76rem;color:var(--text);padding:3px 0 3px 14px;position:relative;line-height:1.5;}
+.cv-items li::before{content:'·';position:absolute;left:3px;color:var(--dim);}
+.cv-items li.added::before{content:'+';color:var(--green);}
+.cv-items li.changed::before{content:'~';color:var(--gold);}
+.cv-items li.fixed::before{content:'x';color:var(--blue);font-size:.7rem;}
+.cv-items li.removed::before{content:'-';color:var(--red);}
+.changelog-close{margin-top:14px;width:100%;padding:10px;border-radius:9px;border:1px solid var(--border);
+  background:transparent;color:var(--dim);font-family:inherit;font-size:.82rem;cursor:pointer;}
+.changelog-close:hover{border-color:var(--gold);color:var(--gold);}
 
 .ptcl{position:fixed;pointer-events:none;z-index:99;font-size:1.3rem;animation:pfly 1s ease-out forwards;}
 @keyframes pfly{0%{transform:translate(0,0) scale(1);opacity:1;}100%{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0;}}
@@ -324,11 +439,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
     <div class="sword-svg-wrap" id="swordSvgWrap"></div>
     <div class="sword-name" id="swordName">낡은 단검</div>
     <div class="sword-lvl" id="swordLvl">+ 0</div>
-    <div class="stats-grid">
-      <div class="sbox"><div class="slabel">공격력</div><div class="sval atk" id="statAtk">10</div></div>
-      <div class="sbox"><div class="slabel">방어력</div><div class="sval def" id="statDef">3</div></div>
-      <div class="sbox"><div class="slabel">속도</div><div class="sval spd" id="statSpd">5</div></div>
-    </div>
+
   </div>
 
   <div class="gold-bar">💰 보유 골드: <strong id="goldDisplay">5,000</strong></div>
@@ -415,10 +526,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
       <div class="enh-info-item">현재 단계: <span id="enhLvlDisplay">+0</span></div>
       <div class="enh-info-item">복구 주문서: <span id="enhScrollDisplay">0개</span></div>
     </div>
-    <div class="enh-btn-row">
-      <button class="enh-stop-btn" id="enhStopBtn" onclick="stopAutoFromOverlay()">⏹ 자동 강화 중지</button>
-      <button class="enh-skip-btn" id="enhSkipBtn" onclick="skipEnhAnim()">⏩ 스킵</button>
-    </div>
+    <button class="enh-stop-btn" id="enhStopBtn" onclick="stopAutoFromOverlay()">⏹ 자동 강화 중지</button>
   </div>
 </div>
 
@@ -481,6 +589,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
         <div class="acfg-chk-box" id="acfgScrollChk"><span class="acfg-chk-mark">✓</span></div>
         <span class="acfg-chk-text">실패 시 복구 주문서 자동 사용</span>
       </div>
+      <div class="acfg-desc" style="color:#ff9040">⚠️ 자동 강화 중 축복의 오브는 사용되지 않습니다.</div>
     </div>
     <div class="acfg-section">
       <div class="acfg-label">⚡ 목표 단계 도달 시 행동</div>
@@ -489,7 +598,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
         <div class="acfg-radio" id="acfgRadioStop" onclick="setAcfgAction('stop')">⏹ 그 단계에서 정지</div>
       </div>
       <div class="acfg-sell-row">
-        <span class="acfg-sell-label">목표 단계: +<span id="acfgTargetDisplay">0</span></span>
+        <span class="acfg-sell-label">목표 단계: +<span id="acfgTargetDisplay">1</span></span>
         <div class="acfg-sell-ctrl">
           <button class="acfg-sell-btn" onclick="changeAcfgTarget(-5)">−5</button>
           <button class="acfg-sell-btn" onclick="changeAcfgTarget(-1)">−</button>
@@ -497,7 +606,7 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
           <button class="acfg-sell-btn" onclick="changeAcfgTarget(+5)">+5</button>
         </div>
       </div>
-      <div class="acfg-desc" id="acfgActionDesc">목표 없음 — 최고 단계(+30)까지 강화합니다.</div>
+      <div class="acfg-desc" id="acfgActionDesc"></div>
       <div class="acfg-warn" id="acfgWarn">⚠️ 현재 단계가 목표 단계 이상이라 시작할 수 없습니다.</div>
     </div>
     <div class="acfg-btns">
@@ -516,12 +625,39 @@ h1{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(1.8rem,5.5vw,3rem);
       <input type="range" class="vol-slider" id="volSlider" min="0" max="100" value="80" oninput="changeVolume(this.value)">
     </div>
     <button class="mute-btn" id="muteBtn" onclick="toggleMute()">🔇 음소거</button>
+    <div class="settings-row" style="margin-top:14px">
+      <div class="settings-row-label">🌓 테마</div>
+      <div style="display:flex;gap:8px">
+        <button class="theme-btn" id="themeDark" onclick="setTheme('dark')" style="flex:1;padding:9px;border-radius:9px;border:1px solid var(--blue);background:transparent;color:var(--blue);font-family:inherit;font-size:.8rem;cursor:pointer;">🌙 어두운 테마</button>
+        <button class="theme-btn" id="themeLight" onclick="setTheme('light')" style="flex:1;padding:9px;border-radius:9px;border:1px solid var(--border);background:transparent;color:var(--dim);font-family:inherit;font-size:.8rem;cursor:pointer;">☀️ 밝은 테마</button>
+      </div>
+    </div>
+    <div class="settings-row">
+      <div class="settings-row-label">🔤 글자 크기 <span id="fontSizeDisplay">100%</span></div>
+      <input type="range" class="vol-slider" id="fontSlider" min="80" max="130" value="100" step="5" oninput="changeFontSize(this.value)">
+    </div>
     <div class="save-row">
       <button class="save-btn" onclick="saveGame()">💾 저장</button>
       <button class="load-btn" onclick="loadGame()">📂 불러오기</button>
     </div>
     <div class="save-status" id="saveStatus"></div>
+    <div class="version-row">
+      <div>
+        <div class="version-label">게임 버전</div>
+        <div class="version-num">v1.0.7</div>
+      </div>
+      <button class="changelog-btn" onclick="openChangelog()">📋 업데이트 내역</button>
+    </div>
     <button class="settings-close" onclick="closeSettings()">닫기</button>
+  </div>
+</div>
+
+<!-- Changelog Modal -->
+<div class="changelog-modal" id="changelogModal">
+  <div class="changelog-box">
+    <div class="changelog-title">📋 업데이트 내역</div>
+    <div id="changelogContent"></div>
+    <button class="changelog-close" onclick="closeChangelog()">닫기</button>
   </div>
 </div>
 
@@ -604,13 +740,7 @@ function makeSwordSVG(lvl,size=90){
   const body=def.svg(c).replace(/fill="(#[0-9a-fA-F]+)"/g,(m,hex)=>hex===c?`fill="url(#${id})"`:m);
   return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${grad}${body}</svg>`;
 }
-function getBaseStats(lvl){
-  const def=getSwordDef(lvl);const idx=SWORD_DEFS.indexOf(def);
-  const bases=[{atk:10,def:3,spd:5},{atk:40,def:14,spd:18},{atk:110,def:34,spd:30},
-    {atk:200,def:63,spd:72},{atk:360,def:110,spd:118},{atk:600,def:175,spd:182},{atk:1200,def:380,spd:380}];
-  const base=bases[Math.min(idx,bases.length-1)];const within=lvl-def.min;const m=1+within*0.22;
-  return{atk:Math.floor(base.atk*m),def:Math.floor(base.def*m),spd:Math.floor(base.spd*m)};
-}
+
 
 // ══════════════════════════════════════════════════════
 //  ENHANCE TABLE
@@ -629,33 +759,20 @@ function orbBonus(lvl){
   return rate*0.10;
 }
 
-// ── Scroll requirement: base × 2 for lvl 5-29, ×3 for 9,14,19,24,29 ──
 function scrollRequired(lvl){
-  if(lvl===0) return 0;
-  let base;
-  if(lvl<=3)       base=1;
-  else if(lvl<=9)  base=1+(lvl-3);    // 4->2,5->3,6->4,7->5,8->6,9->7
-  else if(lvl<=14) base=7+(lvl-10)*2; // 10->7,11->9,12->11,13->13,14->15
-  else if(lvl<=19) base=16+(lvl-15)*3;
-  else if(lvl<=24) base=29+(lvl-20)*4;
-  else if(lvl<=29) base=46+(lvl-25)*6;
-  else              return 100;
-  // 4~9: /2 (this step) then *2 (next) = net *1 for 5-9; *1 for 4 since no *2
-  if(lvl>=4&&lvl<=9) base=Math.round(base/2);
-  // 5~29: *2
-  if(lvl>=5) base=base*2;
-  // 4~9: additional -50% on current value
-  if(lvl>=4&&lvl<=9) base=Math.round(base*0.5);
-  // 10~14: -25%
-  if(lvl>=10&&lvl<=14) base=Math.round(base*0.75);
-  // 20~24: *1.5
-  if(lvl>=20&&lvl<=24) base=Math.round(base*1.5);
-  // 25~29: *2
-  if(lvl>=25&&lvl<=29) base=base*2;
-  // milestone 9,14,19,24,29: *1.5
-  const triples=[9,14,19,24,29];
-  if(triples.includes(lvl)) base=Math.round(base*1.5);
-  return Math.max(1,base);
+  if(lvl<=0)  return 0;
+  if(lvl<=4)  return 1;
+  if(lvl<=8)  return 2;
+  if(lvl===9) return 3;
+  // 10~14
+  if(lvl<=14) return 4+(lvl-10)*2;   // 10->4,11->6,12->8,13->10,14->12
+  // 15~19
+  if(lvl<=19) return 13+(lvl-15)*3;  // 15->13,16->16,17->19,18->22,19->25
+  // 20~24: *1.5 on 15-19 base
+  if(lvl<=24){const b=13+(lvl-15)*3;return Math.round(b*1.5);}
+  // 25~29: *2 on 20-24 result
+  if(lvl<=29){const b=Math.round((13+(lvl-15)*3)*1.5);return b*2;}
+  return 100; // +30
 }
 
 // ── Cumulative cost ──
@@ -686,11 +803,10 @@ const S={
   orbs:0, scrolls:0, orbUse:false,
   shopQty:{orb:1,scroll:1},
   log:[], busy:false, autoOn:false, autoTimer:null, restoreCb:null,
-  autoCfg:{useScroll:false,action:'sell',target:0},
+  autoCfg:{useScroll:false,action:'sell',target:1},
   autoStats:{attempts:0,goldSpent:0,soldCount:0,soldGold:0,destroyedCount:0,restoredCount:0,scrollsUsed:0},
-  volume:0.8, muted:false,
+  volume:0.8, muted:false, theme:'dark', fontSize:100,
   pendingStop:false,
-  skipAnim:false,
 };
 
 // ══════════════════════════════════════════════════════
@@ -728,7 +844,7 @@ function saveGame(){
   const data={
     totalLevel:S.totalLevel, gold:S.gold,
     orbs:S.orbs, scrolls:S.scrolls, orbUse:S.orbUse,
-    volume:S.volume, muted:S.muted,
+    volume:S.volume, muted:S.muted, theme:S.theme||'dark', fontSize:S.fontSize||100,
     log:S.log.slice(0,20),
     savedAt:new Date().toLocaleString('ko-KR'),
   };
@@ -750,6 +866,13 @@ function loadGame(){
     S.orbUse=data.orbUse||false;
     S.volume=data.volume!=null?data.volume:0.8;
     S.muted=data.muted||false;
+    S.theme=data.theme||'dark';
+    S.fontSize=data.fontSize||100;
+    setTheme(S.theme);
+    const fs=S.fontSize;
+    if(document.getElementById('fontSlider'))document.getElementById('fontSlider').value=fs;
+    if(document.getElementById('fontSizeDisplay'))document.getElementById('fontSizeDisplay').textContent=fs+'%';
+    document.documentElement.style.fontSize=(fs/100)+'rem';
     S.log=data.log||[];
     // Restore audio UI
     const vs=Math.round(S.volume*100);
@@ -768,8 +891,141 @@ function loadGame(){
 // ══════════════════════════════════════════════════════
 //  SETTINGS
 // ══════════════════════════════════════════════════════
-function openSettings(){document.getElementById('settingsModal').classList.add('show');}
+function setTheme(t){
+  S.theme=t;
+  document.body.classList.toggle('theme-light',t==='light');
+  updateThemeBtns();
+}
+function updateThemeBtns(){
+  const isDark=S.theme!=='light';
+  const d=document.getElementById('themeDark'),l=document.getElementById('themeLight');
+  if(d&&l){
+    d.style.borderColor=isDark?'var(--blue)':'var(--border)';
+    d.style.color=isDark?'var(--blue)':'var(--dim)';
+    l.style.borderColor=!isDark?'var(--blue)':'var(--border)';
+    l.style.color=!isDark?'var(--blue)':'var(--dim)';
+  }
+}
+function changeFontSize(v){
+  S.fontSize=parseInt(v);
+  // Set html element font-size so all rem units cascade correctly
+  document.documentElement.style.fontSize=(v/100)+'rem';
+  document.getElementById('fontSizeDisplay').textContent=v+'%';
+}
+function openSettings(){document.getElementById('settingsModal').classList.add('show');updateThemeBtns();}
 function closeSettings(){document.getElementById('settingsModal').classList.remove('show');}
+
+// ══════════════════════════════════════════════════════
+//  CHANGELOG
+// ══════════════════════════════════════════════════════
+const CHANGELOG=[
+  {
+    ver:'v1.0.7', date:'2026-05-18', tag:'minor',
+    items:[
+      {type:'added',   text:'설정 창에 게임 버전 및 업데이트 내역 추가'},
+      {type:'added',   text:'밝은 테마 / 어두운 테마 전환 설정 추가'},
+      {type:'added',   text:'글자 크기 조절 설정 추가 (80%~130%)'},
+      {type:'removed', text:'공격력 / 방어력 / 속도 스탯 표시 제거'},
+      {type:'removed', text:'강화 연출 스킵 버튼 제거'},
+      {type:'changed', text:'자동 강화 목표 최솟값 1단계로 고정 (없음 옵션 삭제)'},
+      {type:'changed', text:'자동 강화 중 축복의 오브 사용 불가 처리'},
+      {type:'changed', text:'단계별 정보창 — 검 이름 색상화, 판매가 5단위 주황 그라데이션'},
+      {type:'changed', text:'복구 주문서 요구량 재조정: 5~8단계 2개, 9단계 3개'},
+    ]
+  },
+  {
+    ver:'v1.0.6', date:'2026-05-17', tag:'fix',
+    items:[
+      {type:'fixed',   text:'복구 주문서 없이 파괴 시 수동 강화 버튼 비활성화 버그 수정'},
+      {type:'fixed',   text:'파괴 후 UI가 이전 단계에 머무는 버그 수정'},
+      {type:'changed', text:'강화 실패 파괴 시 이전 등급 강등 → +0 초기화로 변경'},
+      {type:'changed', text:'5~9단계 판매가 1.5배 증가'},
+      {type:'changed', text:'복구 주문서 요구량 4~9단계 50%, 10~14단계 25% 감소'},
+    ]
+  },
+  {
+    ver:'v1.0.5', date:'2026-05-16', tag:'major',
+    items:[
+      {type:'added',   text:'자동 강화 설정 창 추가 (복구 주문서 자동 사용, 목표 단계 설정)'},
+      {type:'added',   text:'자동 강화 종료 후 결과 통계표 (시도 횟수, 골드, 판매 수익, 파괴 등)'},
+      {type:'added',   text:'자동 강화 중 현재 단계 / 복구 주문서 잔량 표시'},
+      {type:'added',   text:'저장 / 불러오기 시스템 (localStorage)'},
+      {type:'added',   text:'+30 신화의 검 달성 시 폭죽 이펙트'},
+      {type:'added',   text:'⚙️ 설정 창 — 볼륨 조절, 음소거'},
+      {type:'changed', text:'자동 강화 실패 시 파괴 팝업 표시 안 함'},
+      {type:'changed', text:'자동 판매 후 반복 / 목표 단계 정지 선택 가능'},
+    ]
+  },
+  {
+    ver:'v1.0.4', date:'2026-05-15', tag:'minor',
+    items:[
+      {type:'added',   text:'단계별 정보창 (성공률 / 비용 / 판매가 / 복구 주문서 수량)'},
+      {type:'added',   text:'강화 실패 시 복구 주문서 사용 여부 팝업 (수동)'},
+      {type:'changed', text:'상점은 +0 단계일 때만 이용 가능하도록 변경'},
+      {type:'changed', text:'검 강화 단계 최대 +30 (신화의 검) 으로 확장'},
+      {type:'changed', text:'단계별 검 이름 및 외형 변경 (6종류)'},
+      {type:'changed', text:'축복의 오브 체크박스로 변경, 성공 확률의 10% 추가'},
+      {type:'changed', text:'복구 주문서 가격 250골드로 고정'},
+    ]
+  },
+  {
+    ver:'v1.0.3', date:'2026-05-14', tag:'minor',
+    items:[
+      {type:'added',   text:'검 판매 기능 추가 (판매 확인 창 포함)'},
+      {type:'added',   text:'자동 강화 기능 추가'},
+      {type:'added',   text:'강화 연출 (충전 → 결과 애니메이션 + 파티클)'},
+      {type:'added',   text:'효과음 추가 (성공, 실패, 승급, 구매, 판매 등)'},
+      {type:'changed', text:'강화 비용 50% 감소'},
+      {type:'changed', text:'판매가 구간별 배율 조정'},
+    ]
+  },
+  {
+    ver:'v1.0.2', date:'2026-05-13', tag:'minor',
+    items:[
+      {type:'added',   text:'상점 추가 (축복의 오브, 복구 주문서)'},
+      {type:'added',   text:'강화 단계 30단계로 확장'},
+      {type:'changed', text:'강화 실패 시 단계 하락 → 파괴 시스템으로 변경'},
+      {type:'changed', text:'초기 골드 5,000으로 조정'},
+    ]
+  },
+  {
+    ver:'v1.0.1', date:'2026-05-12', tag:'fix',
+    items:[
+      {type:'fixed',   text:'강화 버튼 비활성화 조건 오류 수정'},
+      {type:'changed', text:'성공률 표시 색상 개선 (녹색/금색/빨간색)'},
+    ]
+  },
+  {
+    ver:'v1.0.0', date:'2026-05-12', tag:'major',
+    items:[
+      {type:'added',   text:'게임 최초 출시'},
+      {type:'added',   text:'기본 강화 시스템 (성공/실패/단계 하락)'},
+      {type:'added',   text:'강화 확률 및 비용 단계별 조정'},
+      {type:'added',   text:'검 SVG 이미지 및 이름 표시'},
+      {type:'added',   text:'강화 기록 로그'},
+    ]
+  },
+];
+
+const TAG_LABELS={major:'주요 업데이트',minor:'일반 업데이트',fix:'버그 수정'};
+
+function openChangelog(){
+  // Build content
+  const el=document.getElementById('changelogContent');
+  el.innerHTML=CHANGELOG.map(v=>{
+    const items=v.items.map(i=>`<li class="${i.type}">${i.text}</li>`).join('');
+    return `<div class="changelog-version">
+      <div class="cv-header">
+        <span class="cv-ver">${v.ver}</span>
+        <span class="cv-date">${v.date}</span>
+        <span class="cv-tag ${v.tag}">${TAG_LABELS[v.tag]}</span>
+      </div>
+      <ul class="cv-items">${items}</ul>
+    </div>`;
+  }).join('');
+  document.getElementById('changelogModal').classList.add('show');
+}
+function closeChangelog(){document.getElementById('changelogModal').classList.remove('show');}
 function changeVolume(v){S.volume=v/100;document.getElementById('volDisplay').textContent=v+'%';if(S.muted&&v>0){S.muted=false;updateMuteBtn();}}
 function toggleMute(){S.muted=!S.muted;updateMuteBtn();}
 function updateMuteBtn(){const btn=document.getElementById('muteBtn');btn.textContent=S.muted?'🔊 음소거 해제':'🔇 음소거';btn.classList.toggle('muted',S.muted);}
@@ -814,7 +1070,7 @@ function animFW(){
 // ══════════════════════════════════════════════════════
 function init(){
   buildStars();buildInfoTable();updateAll();
-  ['cfmOverlay','resOverlay','infoModal','acfgOverlay','settingsModal'].forEach(id=>{
+  ['cfmOverlay','resOverlay','infoModal','acfgOverlay','settingsModal','changelogModal'].forEach(id=>{
     document.getElementById(id).addEventListener('click',e=>{if(e.target.id===id)document.getElementById(id).classList.remove('show');});
   });
 }
@@ -828,17 +1084,26 @@ function buildStars(){
 }
 function buildInfoTable(){
   const tbody=document.getElementById('infoTbody');
+  // Orange shades for every 5 levels: 5,10,15,20,25,30
+  const orangeShades=['#ff9040','#ff7820','#ff6010','#e84800','#cc3000','#aa1800'];
   for(let i=0;i<=MAX_LEVEL;i++){
     const [rate,cost]=i<ETABLE.length?ETABLE[i]:[0,0];
     const sell=calcSellPrice(i);const def=getSwordDef(i);
     const pct=i<MAX_LEVEL?Math.round(rate*100):'-';
     const rateClass=pct==='-'?'':pct>=60?'ok':pct>=30?'warn':'danger';
     const req=i>0&&i<MAX_LEVEL?scrollRequired(i):'-';
+    // Sell color: gold for 0-4, then deepening orange from +5 onwards
+    let sellColor='var(--gold)';
+    if(i>=5){
+      const bandIdx=Math.floor((i-5)/5); // 5-9->0, 10-14->1, ...
+      sellColor=orangeShades[Math.min(bandIdx,orangeShades.length-1)];
+    }
     const tr=document.createElement('tr');tr.id=`irow-${i}`;
-    tr.innerHTML=`<td class="lvl">+${i}</td><td>${def.name}</td>
+    tr.innerHTML=`<td class="lvl">+${i}</td>
+      <td style="color:${def.color};font-weight:700;text-shadow:0 0 8px ${def.color}80">${def.name}</td>
       <td class="${rateClass}">${pct==='-'?'최대':pct+'%'}</td>
       <td>${i<MAX_LEVEL?cost.toLocaleString()+'G':'–'}</td>
-      <td>${i===0?'판매불가':sell.toLocaleString()+'G'}</td>
+      <td style="color:${sellColor};font-weight:700">${i===0?'판매불가':sell.toLocaleString()+'G'}</td>
       <td class="scroll-req">${req==='-'||req===0?'–':req+'개'}</td>`;
     tbody.appendChild(tr);
   }
@@ -860,13 +1125,10 @@ function updateAll(){
   document.getElementById('goldDisplay').textContent=S.gold.toLocaleString();
 }
 function updateSwordUI(){
-  const lvl=S.totalLevel;const def=getSwordDef(lvl);const stats=getBaseStats(lvl);
+  const lvl=S.totalLevel;const def=getSwordDef(lvl);
   document.getElementById('swordSvgWrap').innerHTML=makeSwordSVG(lvl,90);
   document.getElementById('swordName').textContent=def.name;
   document.getElementById('swordLvl').textContent=`+ ${lvl}`;
-  document.getElementById('statAtk').textContent=stats.atk;
-  document.getElementById('statDef').textContent=stats.def;
-  document.getElementById('statSpd').textContent=stats.spd;
   document.getElementById('swordName').style.color=def.color;
   document.getElementById('swordName').style.textShadow=`0 0 16px ${def.color}`;
   document.documentElement.style.setProperty('--sc',def.color);
@@ -874,7 +1136,7 @@ function updateSwordUI(){
 function updateEnhUI(){
   const lvl=S.totalLevel;const atMax=lvl>=MAX_LEVEL;
   const [baseRate,cost]=!atMax&&lvl<ETABLE.length?ETABLE[lvl]:[0,0];
-  const bonus=S.orbUse&&S.orbs>0?orbBonus(lvl):0;
+  const bonus=(!S.autoOn&&S.orbUse&&S.orbs>0)?orbBonus(lvl):0;
   const prob=Math.min(.97,baseRate+bonus);const pct=Math.round(prob*100);
   const col=pct>=60?'var(--green)':pct>=35?'var(--gold)':'var(--red)';
   const bar=document.getElementById('probBar');
@@ -960,7 +1222,7 @@ function closeAcfg(){document.getElementById('acfgOverlay').classList.remove('sh
 function toggleAcfgScroll(){S.autoCfg.useScroll=!S.autoCfg.useScroll;updateAcfgUI();}
 function setAcfgAction(a){S.autoCfg.action=a;updateAcfgUI();}
 function changeAcfgTarget(d){
-  let v=S.autoCfg.target+d;if(v<0)v=0;if(v>MAX_LEVEL)v=MAX_LEVEL;
+  let v=S.autoCfg.target+d;if(v<1)v=1;if(v>MAX_LEVEL)v=MAX_LEVEL;
   S.autoCfg.target=v;updateAcfgUI();
 }
 function updateAcfgUI(){
@@ -968,21 +1230,15 @@ function updateAcfgUI(){
   document.getElementById('acfgRadioSell').classList.toggle('selected',S.autoCfg.action==='sell');
   document.getElementById('acfgRadioStop').classList.toggle('selected',S.autoCfg.action==='stop');
   const t=S.autoCfg.target;
-  document.getElementById('acfgTargetDisplay').textContent=t===0?'없음':t;
-  const desc=t===0?'목표 없음 — 최고 단계(+30)까지 강화합니다.'
-    :`+${t} 도달 시 → ${S.autoCfg.action==='sell'?'자동 판매 후 반복':'해당 단계에서 정지'}`;
+  document.getElementById('acfgTargetDisplay').textContent=t;
+  const desc=`+${t} 도달 시 → ${S.autoCfg.action==='sell'?'자동 판매 후 반복':'해당 단계에서 정지'}`;
   document.getElementById('acfgActionDesc').textContent=desc;
 
   // Validate: cannot start if currentLevel >= target (when target > 0)
   const cur=S.totalLevel;
   let blocked=false;
-  // For 'stop': can't start if already at or above target
-  // For 'sell': if exactly at target, we'll auto-sell first (allowed)
-  if(t>0){
-    if(S.autoCfg.action==='stop' && cur>=t) blocked=true;
-    // sell: if cur > target, blocked; if cur === target, allowed (will sell first)
-    if(S.autoCfg.action==='sell' && cur>t) blocked=true;
-  }
+  if(S.autoCfg.action==='stop' && cur>=t) blocked=true;
+  if(S.autoCfg.action==='sell' && cur>t) blocked=true;
   document.getElementById('acfgWarn').classList.toggle('show',blocked);
   document.getElementById('acfgStartBtn').disabled=blocked;
 }
@@ -990,8 +1246,7 @@ function updateAcfgUI(){
 function startAuto(){
   closeAcfg();
   const t=S.autoCfg.target;
-  // If action=sell and currentLevel===target: sell first then start
-  if(t>0&&S.autoCfg.action==='sell'&&S.totalLevel===t){
+  if(S.autoCfg.action==='sell'&&S.totalLevel===t){
     // silent sell
     const price=calcSellPrice(S.totalLevel);const def=getSwordDef(S.totalLevel);const lvl=S.totalLevel;
     S.gold+=price;
@@ -1007,10 +1262,6 @@ function startAuto(){
 // ══════════════════════════════════════════════════════
 //  ENHANCE
 // ══════════════════════════════════════════════════════
-function skipEnhAnim(){
-  if(S.autoOn) return; // manual only
-  S.skipAnim=true;
-}
 function manualEnhance(){
   if(S.busy||S.autoOn||S.totalLevel>=MAX_LEVEL) return;
   playTone('click');doEnhance(false);
@@ -1053,7 +1304,8 @@ function doEnhance(isAuto){
   }
   S.gold-=cost;
   if(isAuto) S.autoStats.goldSpent+=cost;
-  if(S.orbUse&&S.orbs>0){S.orbs--;if(!isAuto)/* manual: keep orbUse=true for next attempt */{}else S.orbUse=false;}
+  if(!isAuto&&S.orbUse&&S.orbs>0){S.orbs--;}  // only manual uses orb
+  else if(isAuto&&S.orbUse){S.orbUse=false;}    // auto: never consume orb
   if(isAuto) S.autoStats.attempts++;
 
   const success=Math.random()<prob;
@@ -1081,22 +1333,11 @@ function doEnhance(isAuto){
     infoBar.style.display='none';
   }
 
-  S.skipAnim=false;
   playTone('charge');
   const sparkInt=setInterval(()=>spawnSpark(sparks,def.color),70);
 
-  // Skip button for manual only
-  const skipBtn=document.getElementById('enhSkipBtn');
-  if(!isAuto){skipBtn.classList.add('show');}else{skipBtn.classList.remove('show');}
-
-  let _phase2Done=false;
   const _runPhase2=()=>{
-    if(_phase2Done)return;
-    _phase2Done=true;
-    const _wasSkipped=S.skipAnim;
-    S.skipAnim=false;
     clearInterval(sparkInt);sparks.innerHTML='';
-    skipBtn.classList.remove('show');
 
     if(success){
       const nextLvl=lvl+1;
@@ -1140,7 +1381,7 @@ function doEnhance(isAuto){
         }
         updateAll();
         if(S.pendingStop&&!S.autoOn){S.pendingStop=false;showAutoReport();}
-      },_wasSkipped?50:700);
+      },700);
 
     } else {
       // FAIL
@@ -1175,14 +1416,10 @@ function doEnhance(isAuto){
             updateAll();
           }
         }
-      },_wasSkipped?50:700);
+      },700);
     }
   };
-  // Poll for skip (manual) or wait 1300ms
-  let _pollInterval=setInterval(()=>{
-    if(S.skipAnim&&!isAuto){clearInterval(_pollInterval);_runPhase2();}
-  },30);
-  setTimeout(()=>{clearInterval(_pollInterval);_runPhase2();},1300);
+  setTimeout(_runPhase2,1300);
 }
 
 function autoSell(){
