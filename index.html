@@ -4,7 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>⚔️ 전설의 검 강화</title>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Dongle:wght@700&display=swap" rel="stylesheet">
+<style>
+/* 빛의계승자체 (제작: 펀플로X산돌) — 게임 제목용 */
+@font-face {
+  font-family: 'LightOfHeirsOTF';
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/LightOfHeirsOTF/LightOfHeirsOTF.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/fonts-archive/LightOfHeirsOTF/LightOfHeirsOTF.woff') format('woff');
+  font-weight: normal; font-style: normal;
+}
+/* 마루미냐 한글 (제작: 이민서) — 본문 픽셀 폰트 */
+@font-face {
+  font-family: 'MaruMinyaHangul';
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruMinyaHangul/MaruMinyaHangul.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruMinyaHangul/MaruMinyaHangul.woff') format('woff');
+  font-weight: normal; font-style: normal;
+}
+</style>
 <style>
 :root{
   --bg:#08080e;--border:#221e38;
@@ -144,7 +159,7 @@ body.theme-light .changelog-modal{background:#00000055!important;}
 /* Enhance overlay stage */
 body.theme-light .enh-stage .enh-msg{color:#1a100a;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:'Jua',sans-serif;
+body{background:var(--bg);color:var(--text);font-family:'MaruMinyaHangul',monospace;
   min-height:100vh;display:flex;flex-direction:column;align-items:center;
   padding:16px 12px 40px;overflow-x:hidden;}
 .panel{background:var(--panel-bg);border:1px solid var(--border);border-radius:14px;padding:18px 16px;margin-bottom:13px;}
@@ -165,7 +180,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   color:var(--dim);font-size:.85rem;padding:6px 10px;cursor:pointer;transition:all .2s;}
 .settings-btn:hover{border-color:var(--gold);color:var(--gold);}
 
-h1{font-family:'Dongle',sans-serif;font-weight:700;font-size:clamp(2rem,6vw,3.2rem);
+h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem,6vw,3.2rem);
   text-align:center;color:var(--gold);text-shadow:var(--glow-gold);margin-bottom:6px;letter-spacing:2px;}
 .subtitle{text-align:center;color:var(--dim);font-size:.75rem;margin-bottom:20px;letter-spacing:3px;text-transform:uppercase;}
 
