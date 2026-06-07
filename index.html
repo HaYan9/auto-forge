@@ -4,23 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>⚔️ 전설의 검 강화</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-/* 빛의계승자체 (제작: 펀플로X산돌) — 게임 제목용 */
-@font-face {
-  font-family: 'LightOfHeirsOTF';
-  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/LightOfHeirsOTF/LightOfHeirsOTF.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/fonts-archive/LightOfHeirsOTF/LightOfHeirsOTF.woff') format('woff');
-  font-weight: normal; font-style: normal;
-}
-/* 마루미냐 한글 (제작: 이민서) — 본문 픽셀 폰트 */
-@font-face {
-  font-family: 'MaruMinyaHangul';
-  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruMinyaHangul/MaruMinyaHangul.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruMinyaHangul/MaruMinyaHangul.woff') format('woff');
-  font-weight: normal; font-style: normal;
-}
-</style>
-<style>
+  /* 픽셀 폰트: Galmuri11 (npm CDN — 한글 픽셀 폰트) */
+  @font-face{font-family:'Galmuri11';font-weight:400;font-style:normal;
+    src:url('https://cdn.jsdelivr.net/npm/galmuri/dist/Galmuri11.woff2') format('woff2');}
+  @font-face{font-family:'Galmuri11';font-weight:700;font-style:normal;
+    src:url('https://cdn.jsdelivr.net/npm/galmuri/dist/Galmuri11-Bold.woff2') format('woff2');}
 :root{
   --bg:#08080e;--border:#221e38;
   --gold:#f0c040;--red:#ff3a3a;--blue:#4a8fff;--green:#38d878;
@@ -101,6 +92,7 @@ body.theme-light .acfg-radio{background:#ddd6c8!important;border-color:#b0a898!i
 body.theme-light .acfg-radio.selected{background:#c0d0e8!important;border-color:var(--blue)!important;color:var(--blue)!important;}
 body.theme-light .theme-btn{background:#ddd6c8!important;border-color:#b0a898!important;}
 body.theme-light .vol-slider{background:#c8c0b0!important;}
+body.theme-light #muteBtn{background:#ddd6c8!important;border-color:#b0a898!important;color:var(--text)!important;}
 body.theme-light .mute-btn,
 body.theme-light .settings-close,
 body.theme-light .info-close,
@@ -159,7 +151,7 @@ body.theme-light .changelog-modal{background:#00000055!important;}
 /* Enhance overlay stage */
 body.theme-light .enh-stage .enh-msg{color:#1a100a;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:'MaruMinyaHangul',monospace;
+body{background:var(--bg);color:var(--text);font-family:'Galmuri11',monospace;
   min-height:100vh;display:flex;flex-direction:column;align-items:center;
   padding:16px 12px 40px;overflow-x:hidden;}
 .panel{background:var(--panel-bg);border:1px solid var(--border);border-radius:14px;padding:18px 16px;margin-bottom:13px;}
@@ -180,7 +172,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   color:var(--dim);font-size:.85rem;padding:6px 10px;cursor:pointer;transition:all .2s;}
 .settings-btn:hover{border-color:var(--gold);color:var(--gold);}
 
-h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem,6vw,3.2rem);
+h1{font-family:'Galmuri11',monospace;font-weight:700;font-size:clamp(1.6rem,5vw,2.8rem);
   text-align:center;color:var(--gold);text-shadow:var(--glow-gold);margin-bottom:6px;letter-spacing:2px;}
 .subtitle{text-align:center;color:var(--dim);font-size:.75rem;margin-bottom:20px;letter-spacing:3px;text-transform:uppercase;}
 
@@ -435,6 +427,22 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
   color:var(--green);font-family:inherit;font-size:.78rem;cursor:pointer;transition:all .2s;}
 .load-btn:hover{background:#081808;box-shadow:0 0 8px #38d87840;}
 .save-status{font-size:.68rem;color:var(--dim);text-align:center;margin-top:6px;min-height:1rem;}
+.discord-link-btn{background:transparent;color:var(--blue);display:block;margin-top:14px;padding:10px 12px;
+  background:var(--panel-bg);border:1px solid var(--blue);border-radius:9px;
+  text-align:center;text-decoration:none;}
+.discord-link-label{font-size:.68rem;color:var(--dim);margin-bottom:4px;}
+.discord-link-text{font-size:.82rem;color:var(--blue);font-weight:700;}
+.discord-link-btn:hover .discord-link-text{text-decoration:underline;}
+body.theme-light .discord-link-btn{background:#d4e4f8!important;border-color:var(--blue)!important;color:var(--blue)!important;}
+body.theme-light .discord-link-label{color:var(--dim)!important;}
+body.theme-light .discord-link-text{color:var(--blue)!important;}
+body.theme-light .discord-link-btn *{color:var(--blue)!important;}
+body.theme-light a.discord-link-btn{color:var(--blue)!important;}
+body.theme-light .discord-link-label{color:var(--dim)!important;}
+body.theme-light .discord-link-text{color:var(--blue)!important;}
+body.theme-light .discord-link-btn *{color:var(--blue)!important;}
+body.theme-light .discord-link-label{color:var(--dim)!important;}
+body.theme-light .discord-link-text{color:var(--blue)!important;}
 .settings-close{margin-top:14px;width:100%;padding:10px;border-radius:9px;border:1px solid var(--border);
   background:transparent;color:var(--dim);font-family:inherit;font-size:.82rem;cursor:pointer;}
 .settings-close:hover{border-color:var(--gold);color:var(--gold);}
@@ -473,12 +481,155 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
   background:transparent;color:var(--dim);font-family:inherit;font-size:.82rem;cursor:pointer;}
 .changelog-close:hover{border-color:var(--gold);color:var(--gold);}
 
+/* ── Absdest Reveal Stage ── */
+.absdest-overlay{position:fixed;inset:0;z-index:170;display:flex;align-items:center;justify-content:center;
+  background:#000000f0;opacity:0;pointer-events:none;transition:opacity .4s;cursor:pointer;}
+.absdest-overlay.show{opacity:1;pointer-events:all;}
+.absdest-canvas-wrap{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;height:100%;}
+#absdestCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.absdest-sword-stage{position:relative;z-index:2;text-align:center;display:flex;
+  flex-direction:column;align-items:center;gap:14px;}
+.absdest-sword-wrap{display:flex;justify-content:center;align-items:center;
+  width:120px;height:130px;position:relative;}
+.absdest-sword-wrap svg{transition:filter .4s;}
+.absdest-hint-text{font-size:.8rem;color:#ffffff55;letter-spacing:2px;
+  animation:pulse-hint 1.5s ease-in-out infinite;}
+.absdest-result-text{font-size:1.6rem;font-weight:900;letter-spacing:2px;
+  opacity:0;transition:opacity .5s;text-align:center;text-shadow:0 0 20px currentColor;}
+.absdest-result-text.show{opacity:1;}
+/* Crack overlay on sword for destroy */
+.sword-crack{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;}
+.sword-crack.show{opacity:1;}
+
 .ptcl{position:fixed;pointer-events:none;z-index:99;font-size:1.3rem;animation:pfly 1s ease-out forwards;}
 @keyframes pfly{0%{transform:translate(0,0) scale(1);opacity:1;}100%{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0;}}
 @keyframes sw-shake{0%,100%{transform:rotate(-4deg);}20%{transform:translateX(-9px) rotate(-12deg);}40%{transform:translateX(9px) rotate(2deg);}60%{transform:translateX(-7px) rotate(-8deg);}80%{transform:translateX(6px) rotate(-1deg);}}
 @keyframes sw-success{0%{transform:scale(1) rotate(-4deg);}30%{transform:scale(1.3) rotate(12deg);}60%{transform:scale(.95) rotate(-3deg);}100%{transform:rotate(-4deg);}}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-thumb{background:#221e38;border-radius:4px;}
+
+/* ── Reveal Overlay (25~29 결과 확인) ── */
+.reveal-overlay{position:fixed;inset:0;z-index:170;display:flex;align-items:center;
+  justify-content:center;background:#000000e0;opacity:0;pointer-events:none;
+  transition:opacity .25s;cursor:pointer;}
+.reveal-overlay.show{opacity:1;pointer-events:all;}
+.reveal-stage{text-align:center;position:relative;padding:40px 20px;user-select:none;}
+.reveal-icon{font-size:5rem;display:block;margin-bottom:14px;filter:blur(8px);transition:filter 1.2s;}
+.reveal-icon.unblur{filter:blur(0);}
+.reveal-hint{font-size:.8rem;color:#ffffff60;letter-spacing:2px;margin-bottom:8px;animation:pulse-hint 1.5s ease-in-out infinite;}
+@keyframes pulse-hint{0%,100%{opacity:.4;}50%{opacity:1;}}
+.reveal-msg{font-size:1.5rem;font-weight:900;letter-spacing:2px;opacity:0;transition:opacity .6s;margin-top:12px;}
+.reveal-msg.show{opacity:1;}
+.reveal-sparks{position:absolute;inset:0;pointer-events:none;}
+/* light theme */
+body.theme-light .reveal-overlay{background:#000000aa;}
+
+/* ── Level Bar ── */
+.level-bar{display:flex;align-items:center;gap:10px;margin-bottom:13px;
+  padding:10px 14px;background:linear-gradient(160deg,#110f1e,#0d0b17);
+  border:1px solid var(--border);border-radius:12px;}
+.lv-badge{background:linear-gradient(135deg,#2a1a60,#1a0a40);border:2px solid var(--blue);
+  border-radius:8px;padding:4px 10px;font-size:.8rem;font-weight:700;color:var(--blue);
+  white-space:nowrap;flex-shrink:0;}
+.lv-xp-wrap{flex:1;}
+.lv-xp-label{display:flex;justify-content:space-between;font-size:.65rem;color:var(--dim);margin-bottom:4px;}
+.lv-xp-bar{height:7px;background:#16142a;border-radius:4px;overflow:hidden;}
+.lv-xp-fill{height:100%;background:linear-gradient(90deg,var(--blue),#88aaff);border-radius:4px;transition:width .6s ease;}
+
+/* ── Help button ── */
+.help-btn{position:absolute;right:44px;top:50%;transform:translateY(-50%);
+  background:transparent;border:1px solid var(--border);border-radius:8px;
+  color:var(--dim);font-size:.85rem;padding:6px 10px;cursor:pointer;transition:all .2s;font-family:inherit;}
+.help-btn:hover{border-color:var(--blue);color:var(--blue);}
+
+/* ── Tutorial overlay ── */
+.tutorial-overlay{position:fixed;inset:0;z-index:300;background:#000000d8;
+  opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;}
+.tutorial-overlay.show{opacity:1;pointer-events:all;}
+.tutorial-box{background:#110f1e;border:2px solid var(--blue);border-radius:18px;
+  padding:0;max-width:480px;width:94%;max-height:88vh;overflow:hidden;
+  transform:scale(.85);transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;}
+.tutorial-overlay.show .tutorial-box{transform:scale(1);}
+.tutorial-header{padding:18px 20px 12px;border-bottom:1px solid var(--border);text-align:center;}
+.tutorial-header h2{font-size:1.05rem;color:var(--blue);font-weight:700;}
+.tutorial-pages{flex:1;overflow-y:auto;padding:18px 20px;}
+.tutorial-page{display:none;}
+.tutorial-page.active{display:block;}
+.tut-icon{font-size:2.4rem;text-align:center;margin-bottom:10px;}
+.tut-title{font-size:.9rem;font-weight:700;color:var(--gold);margin-bottom:8px;text-align:center;}
+.tut-body{font-size:.78rem;color:var(--text);line-height:1.9;white-space:pre-line;}
+.tut-highlight{color:var(--blue);font-weight:700;}
+.tut-warn{color:var(--red);font-weight:700;}
+.tut-good{color:var(--green);font-weight:700;}
+.tutorial-footer{display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;border-top:1px solid var(--border);gap:10px;}
+.tut-dots{display:flex;gap:6px;align-items:center;}
+.tut-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .2s;}
+.tut-dot.active{background:var(--blue);}
+.tut-prev,.tut-next,.tut-close{padding:9px 18px;border-radius:9px;font-family:inherit;
+  font-size:.8rem;cursor:pointer;transition:all .2s;border:1px solid;}
+.tut-prev{background:transparent;border-color:var(--border);color:var(--dim);}
+.tut-prev:hover{border-color:var(--blue);color:var(--blue);}
+.tut-next{background:transparent;border-color:var(--blue);color:var(--blue);font-weight:700;}
+.tut-next:hover{box-shadow:0 0 10px #4a8fff60;}
+.tut-close{background:linear-gradient(135deg,#281808,#180c20);border-color:var(--gold);color:var(--gold);}
+.tut-close:hover{box-shadow:var(--glow-gold);}
+
+/* ── Quest tab ── */
+.quest-list{display:flex;flex-direction:column;gap:10px;}
+.quest-card{background:#0a0a16;border:1px solid #1e1c30;border-radius:12px;padding:14px 14px;
+  transition:border-color .2s;position:relative;overflow:hidden;}
+.quest-card.done{border-color:#2a4a2a;opacity:.6;}
+.quest-card.done::after{content:'✅ 완료';position:absolute;top:10px;right:12px;
+  font-size:.68rem;color:var(--green);font-weight:700;}
+.quest-card-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
+.quest-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+.quest-info{flex:1;}
+.quest-name{font-size:.84rem;font-weight:700;color:var(--text);margin-bottom:3px;}
+.quest-desc{font-size:.7rem;color:var(--dim);line-height:1.5;}
+.quest-progress-row{display:flex;align-items:center;gap:8px;}
+.quest-prog-bar{flex:1;height:6px;background:#16142a;border-radius:3px;overflow:hidden;}
+.quest-prog-fill{height:100%;border-radius:3px;transition:width .4s;}
+.quest-prog-label{font-size:.65rem;color:var(--dim);white-space:nowrap;}
+.quest-reward{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+.quest-reward-item{font-size:.68rem;padding:3px 8px;border-radius:6px;
+  background:#16142a;border:1px solid var(--border);}
+.quest-reward-item.gold{color:var(--gold);border-color:#3a2a00;}
+.quest-reward-item.xp{color:var(--blue);border-color:#1a2a50;}
+.quest-reward-item.orb{color:#ffcc44;border-color:#3a3000;}
+.quest-reward-item.scroll{color:#88ccff;border-color:#1a2a40;}
+.quest-section-title{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--dim);margin-bottom:8px;margin-top:14px;display:flex;align-items:center;gap:8px;}
+.quest-section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ── Level up popup ── */
+.lvup-overlay{position:fixed;inset:0;z-index:250;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;opacity:0;transition:opacity .3s;}
+.lvup-overlay.show{opacity:1;}
+.lvup-box{background:linear-gradient(135deg,#1a0a40,#0a1040);
+  border:2px solid var(--blue);border-radius:16px;padding:28px 32px;text-align:center;
+  box-shadow:0 0 30px #4a8fff80;transform:scale(.7) translateY(20px);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.lvup-overlay.show .lvup-box{transform:scale(1) translateY(0);}
+.lvup-icon{font-size:2.8rem;display:block;margin-bottom:6px;}
+.lvup-title{font-size:1.4rem;font-weight:900;color:var(--blue);margin-bottom:4px;}
+.lvup-sub{font-size:.82rem;color:#aaccff;}
+
+/* Light theme quest/level */
+body.theme-light .level-bar{background:#ece6da!important;border-color:#b8b0a0!important;}
+body.theme-light .lv-badge{background:linear-gradient(135deg,#c8d8f0,#b0c4e0)!important;border-color:var(--blue)!important;color:var(--blue)!important;}
+body.theme-light .lv-xp-bar{background:#c8c0b0!important;}
+body.theme-light .quest-card{background:#ddd6c8!important;border-color:#b0a898!important;}
+body.theme-light .quest-card.done{background:#d0d8d0!important;border-color:#90a890!important;}
+body.theme-light .quest-prog-bar{background:#c0b8a8!important;}
+body.theme-light .quest-reward-item{background:#ccc4b8!important;border-color:#a8a098!important;}
+body.theme-light .tutorial-box{background:#ece6da!important;border-color:var(--blue)!important;}
+body.theme-light .tutorial-header{border-color:#c0b8a8!important;}
+body.theme-light .tutorial-footer{border-color:#c0b8a8!important;}
+body.theme-light .tut-body{color:var(--text)!important;}
+body.theme-light .lvup-box{background:linear-gradient(135deg,#c8d8f0,#b0c4e0)!important;}
 </style>
 </head>
 <body>
@@ -487,6 +638,7 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
 <div class="wrap">
   <div class="top-bar">
     <h1>⚔️ 전설의 검</h1>
+    <button class="help-btn" onclick="openTutorial()">❓</button>
     <button class="settings-btn" onclick="openSettings()">⚙️</button>
   </div>
   <p class="subtitle">강화의 길은 험난하다</p>
@@ -500,10 +652,23 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
 
   <div class="gold-bar">💰 보유 골드: <strong id="goldDisplay">5,000</strong></div>
 
+  <!-- Level Bar -->
+  <div class="level-bar" id="levelBar">
+    <div class="lv-badge" id="lvBadge">Lv.1</div>
+    <div class="lv-xp-wrap">
+      <div class="lv-xp-label">
+        <span id="lvXpLabel">경험치</span>
+        <span id="lvXpNum">0 / 100</span>
+      </div>
+      <div class="lv-xp-bar"><div class="lv-xp-fill" id="lvXpFill" style="width:0%"></div></div>
+    </div>
+  </div>
+
   <div class="tabs">
     <button class="tab active" onclick="switchTab('enhance')">⚡ 강화</button>
     <button class="tab" onclick="switchTab('shop')">🏪 상점</button>
     <button class="tab" onclick="switchTab('sell')">💰 판매</button>
+    <button class="tab" onclick="switchTab('quest')" id="questTab">📋 퀘스트</button>
   </div>
 
   <div id="tab-enhance" class="panel">
@@ -520,6 +685,8 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
       <div class="pbar-bg"><div class="pbar-fill" id="probBar"></div></div>
       <span class="pval" id="probVal">–</span>
     </div>
+    <div id="absRow" style="display:none;text-align:center;font-size:.78rem;color:#ff3333;
+      font-weight:700;padding:5px 0 2px;letter-spacing:.5px;"></div>
     <div class="cost-row" id="costRow">강화 비용: <span>–</span></div>
     <button class="info-btn" onclick="openInfoModal()">📊 단계별 강화 확률 / 비용 / 판매가 보기</button>
     <div class="btn-row">
@@ -566,9 +733,37 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
     <div id="sellContent"></div>
   </div>
 
+  <!-- QUEST TAB -->
+  <div id="tab-quest" class="panel" style="display:none">
+    <div class="ptitle">퀘스트</div>
+    <div id="questContent"></div>
+  </div>
+
   <div class="panel">
     <div class="ptitle">강화 기록</div>
     <ul class="log-list" id="logList"><li>🔰 강화를 시작하세요!</li></ul>
+  </div>
+</div>
+
+<!-- Absdest Reveal Stage -->
+<div class="absdest-overlay" id="absdestOverlay" onclick="absdestClick()">
+  <canvas id="absdestCanvas"></canvas>
+  <div class="absdest-canvas-wrap">
+    <div class="absdest-sword-stage">
+      <div class="absdest-sword-wrap" id="absdestSwordWrap">
+        <svg id="absdestSvg" width="110" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg>
+        <svg class="sword-crack" id="swordCrackSvg" width="110" height="120" viewBox="0 0 100 100" style="position:absolute;top:0;left:0;" xmlns="http://www.w3.org/2000/svg">
+          <line x1="50" y1="10" x2="38" y2="40" stroke="#ff2200" stroke-width="2.5" opacity=".95"/>
+          <line x1="38" y1="40" x2="58" y2="60" stroke="#ff4400" stroke-width="2" opacity=".85"/>
+          <line x1="58" y1="60" x2="42" y2="82" stroke="#ff2200" stroke-width="2.5" opacity=".95"/>
+          <line x1="52" y1="25" x2="66" y2="48" stroke="#ff3300" stroke-width="1.5" opacity=".75"/>
+          <line x1="44" y1="50" x2="30" y2="66" stroke="#ff4400" stroke-width="1.5" opacity=".7"/>
+          <line x1="56" y1="54" x2="68" y2="70" stroke="#ff3300" stroke-width="1" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="absdest-hint-text" id="absdestHintText">화면을 클릭하여 결과 확인</div>
+      <div class="absdest-result-text" id="absdestResultText"></div>
+    </div>
   </div>
 </div>
 
@@ -677,10 +872,13 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
   <div class="settings-box">
     <div class="settings-title">⚙️ 설정</div>
     <div class="settings-row">
-      <div class="settings-row-label">🔊 볼륨 <span id="volDisplay">80%</span></div>
-      <input type="range" class="vol-slider" id="volSlider" min="0" max="100" value="80" oninput="changeVolume(this.value)">
+      <div class="settings-row-label">볼륨 <span id="volDisplay">80%</span></div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button class="mute-btn" id="muteBtn" onclick="toggleMute()"
+          style="flex-shrink:0;width:32px;height:32px;font-size:1.1rem;background:transparent;border:1px solid var(--border);border-radius:8px;cursor:pointer;color:var(--text);line-height:1;display:flex;align-items:center;justify-content:center;">🔊</button>
+        <input type="range" class="vol-slider" id="volSlider" min="0" max="100" value="80" oninput="changeVolume(this.value)" style="flex:1;">
+      </div>
     </div>
-    <button class="mute-btn" id="muteBtn" onclick="toggleMute()">🔇 음소거</button>
     <div class="settings-row" style="margin-top:14px">
       <div class="settings-row-label">🌓 테마</div>
       <div style="display:flex;gap:8px">
@@ -700,10 +898,14 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
     <div class="version-row">
       <div>
         <div class="version-label">게임 버전</div>
-        <div class="version-num">v1.0.7</div>
+        <div class="version-num">v1.1.2</div>
       </div>
       <button class="changelog-btn" onclick="openChangelog()">📋 업데이트 내역</button>
     </div>
+    <a href="https://discord.gg/34dbEVvur5" target="_blank" rel="noopener" class="discord-link-btn">
+      <div class="discord-link-label">💬 의견 보내기</div>
+      <div class="discord-link-text">디스코드 서버 참여하기 →</div>
+    </a>
     <button class="settings-close" onclick="closeSettings()">닫기</button>
   </div>
 </div>
@@ -714,6 +916,30 @@ h1{font-family:'LightOfHeirsOTF',sans-serif;font-weight:700;font-size:clamp(2rem
     <div class="changelog-title">📋 업데이트 내역</div>
     <div id="changelogContent"></div>
     <button class="changelog-close" onclick="closeChangelog()">닫기</button>
+  </div>
+</div>
+
+<!-- Tutorial Overlay -->
+<div class="tutorial-overlay" id="tutorialOverlay">
+  <div class="tutorial-box">
+    <div class="tutorial-header">
+      <h2>📖 전설의 검 — 플레이 가이드</h2>
+    </div>
+    <div class="tutorial-pages" id="tutPages"></div>
+    <div class="tutorial-footer">
+      <button class="tut-prev" id="tutPrev" onclick="tutNav(-1)">◀ 이전</button>
+      <div class="tut-dots" id="tutDots"></div>
+      <button class="tut-next" id="tutNext" onclick="tutNav(1)">다음 ▶</button>
+    </div>
+  </div>
+</div>
+
+<!-- Level Up Popup -->
+<div class="lvup-overlay" id="lvupOverlay">
+  <div class="lvup-box">
+    <span class="lvup-icon">⬆️</span>
+    <div class="lvup-title" id="lvupTitle">레벨 업!</div>
+    <div class="lvup-sub" id="lvupSub">Lv.2 달성!</div>
   </div>
 </div>
 
@@ -826,8 +1052,8 @@ function scrollRequired(lvl){
   if(lvl<=19) return 13+(lvl-15)*3;  // 15->13,16->16,17->19,18->22,19->25
   // 20~24: *1.5 on 15-19 base
   if(lvl<=24){const b=13+(lvl-15)*3;return Math.round(b*1.5);}
-  // 25~29: *2 on 20-24 result
-  if(lvl<=29){const b=Math.round((13+(lvl-15)*3)*1.5);return b*2;}
+  // 25~29: *2 on 20-24 result, then -50
+  if(lvl<=29){const b=Math.round((13+(lvl-15)*3)*1.5);const v=Math.max(1,b*2-50);return v;}
   return 100; // +30
 }
 
@@ -840,15 +1066,16 @@ function calcSellPrice(lvl){
   if(lvl===0) return 0;
   const cum=CUMCOST[lvl];
   if(lvl<=4) return Math.floor(cum*0.25*1.5);
-  if(lvl<=9){return Math.floor(cum*0.25*3*1.5*1.5);}  // +1.5x extra
+  if(lvl<=9){return Math.floor(cum*0.25*3*1.5*1.5);}
   const profitMult=1.5+(lvl-10)*0.08;
-  let rangeMult,adjMult=1;
-  if(lvl<=14)      {rangeMult=2;   adjMult=0.85;}  // -15%
-  else if(lvl<=19) {rangeMult=3;   adjMult=0.90;}  // -10%
-  else if(lvl<=24) {rangeMult=4;   adjMult=0.90;}  // -10%
-  else if(lvl<=29) {rangeMult=5;   adjMult=0.80;}  // -20%
-  else              {rangeMult=8;   adjMult=1.0;}   // +30 no change
-  return Math.floor(cum*profitMult*rangeMult*1.5*adjMult);
+  let rangeMult,adjMult=1,extraMult=1;
+  if(lvl<=14)      {rangeMult=2;   adjMult=0.85;}
+  else if(lvl<=19) {rangeMult=3;   adjMult=0.90;}
+  else if(lvl<=24) {rangeMult=4;   adjMult=0.90;}
+  else if(lvl<=26) {rangeMult=5;   adjMult=0.80; extraMult=1.25;} // 25~26 +25%
+  else if(lvl<=29) {rangeMult=5;   adjMult=0.80; extraMult=2.0;}  // 27~29 ×2
+  else              {rangeMult=8;   adjMult=1.0;  extraMult=5.0;}  // +30 ×10 then ×0.5 = ×5
+  return Math.floor(cum*profitMult*rangeMult*1.5*adjMult*extraMult);
 }
 
 // ══════════════════════════════════════════════════════
@@ -862,6 +1089,9 @@ const S={
   autoCfg:{useScroll:false,action:'sell',target:1},
   autoStats:{attempts:0,goldSpent:0,soldCount:0,soldGold:0,destroyedCount:0,restoredCount:0,scrollsUsed:0},
   volume:0.8, muted:false, theme:'dark', fontSize:100,
+  lv:1, xp:0,
+  qp:{}, qd:{}, qbest:{}, qt:{sells:0,scrollBuy:0,orbBuy:0},
+  noFailInvalid:false,
   pendingStop:false,
 };
 
@@ -874,21 +1104,89 @@ function playTone(type){
   if(S.muted||S.volume===0)return;
   try{
     const ac=getAC();const now=ac.currentTime;const vol=S.volume;
-    const mk=(freq,tp='sine',v=.15,dur=.2,t=now)=>{
+    const mk=(freq,tp='sine',v=.12,dur=.18,t=now)=>{
       const o=ac.createOscillator(),g=ac.createGain();
       o.type=tp;o.frequency.value=freq;
       g.gain.setValueAtTime(v*vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);
       o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+dur);
     };
-    if(type==='click')mk(880,'sine',.1,.1);
-    else if(type==='charge'){const o=ac.createOscillator(),g=ac.createGain();o.type='sawtooth';o.frequency.setValueAtTime(180,now);o.frequency.linearRampToValueAtTime(520,now+1.2);g.gain.setValueAtTime(.05*vol,now);g.gain.linearRampToValueAtTime(.1*vol,now+1.0);g.gain.exponentialRampToValueAtTime(.001,now+1.3);o.connect(g);g.connect(ac.destination);o.start(now);o.stop(now+1.3);}
-    else if(type==='success')[523,659,784,1047].forEach((f,i)=>mk(f,'sine',.13,.3,now+i*.08));
-    else if(type==='ascend')[523,659,784,1047,1318].forEach((f,i)=>mk(f,'triangle',.16,.38,now+i*.07));
-    else if(type==='max')[523,659,784,1047,1318,1568].forEach((f,i)=>mk(f,'triangle',.2,.5,now+i*.06));
-    else if(type==='fail'){const o=ac.createOscillator(),g=ac.createGain();o.type='sawtooth';o.frequency.setValueAtTime(300,now);o.frequency.exponentialRampToValueAtTime(55,now+.55);g.gain.setValueAtTime(.18*vol,now);g.gain.exponentialRampToValueAtTime(.001,now+.55);o.connect(g);g.connect(ac.destination);o.start(now);o.stop(now+.55);}
-    else if(type==='restore')[440,554,659].forEach((f,i)=>mk(f,'sine',.12,.28,now+i*.1));
-    else if(type==='buy')mk(1047,'sine',.1,.15);
-    else if(type==='sell')[659,880,1047].forEach((f,i)=>mk(f,'sine',.11,.24,now+i*.09));
+    const noise=(v,dur,t=now)=>{
+      const buf=ac.createBuffer(1,ac.sampleRate*dur,ac.sampleRate);
+      const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      const src=ac.createBufferSource(),g=ac.createGain();
+      src.buffer=buf;g.gain.setValueAtTime(v*vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);
+      src.connect(g);g.connect(ac.destination);src.start(t);
+    };
+
+    if(type==='click'){
+      mk(1046,'sine',.06,.07);
+    }
+    else if(type==='charge'){
+      // 픽셀 게임 스타일 충전음: 빠른 상승 + 떨림
+      const steps=[110,138,164,220,277,329,415,523];
+      steps.forEach((f,i)=>{
+        const t=now+i*.14;
+        mk(f,'square',.07,.18,t);
+        mk(f*2,'square',.04,.14,t+.04);
+      });
+      // 떨림 이펙트
+      const oV=ac.createOscillator(),gV=ac.createGain();
+      const lfoG=ac.createOscillator(),lfoGain=ac.createGain();
+      oV.type='sawtooth'; oV.frequency.setValueAtTime(55,now+.9);
+      oV.frequency.linearRampToValueAtTime(220,now+1.4);
+      lfoG.frequency.value=18; lfoGain.gain.value=.04*vol;
+      lfoG.connect(lfoGain); lfoGain.connect(gV.gain);
+      gV.gain.setValueAtTime(.08*vol,now+.9);
+      gV.gain.linearRampToValueAtTime(.12*vol,now+1.2);
+      gV.gain.exponentialRampToValueAtTime(.001,now+1.5);
+      oV.connect(gV); gV.connect(ac.destination);
+      oV.start(now+.9); oV.stop(now+1.5);
+      lfoG.start(now+.9); lfoG.stop(now+1.5);
+    }
+    else if(type==='success'){
+      // 픽셀 게임 성공음 — 경쾌한 상승 아르페지오
+      [262,330,392,523,659,784].forEach((f,i)=>mk(f,'square',.09,.2,now+i*.07));
+      mk(1046,'square',.07,.3,now+.45);
+      mk(1568,'sine',.08,.35,now+.52);
+      mk(2093,'sine',.05,.25,now+.6);
+    }
+    else if(type==='ascend'){
+      // 승급 — 따뜻한 화음 + 밝은 상승
+      [[261,329,392],[329,415,494],[392,494,587],[523,659,784]].forEach(([a,b,c],i)=>{
+        mk(a,'sine',.1,.45,now+i*.11);mk(b,'triangle',.09,.45,now+i*.11);mk(c,'sine',.08,.45,now+i*.11);
+      });
+      mk(1046,'sine',.13,.55,now+.48);mk(1318,'sine',.11,.6,now+.56);mk(1568,'sine',.09,.5,now+.64);
+    }
+    else if(type==='max'){
+      // 신화 달성 — 웅장한 오케스트라풍
+      [[130,164,196],[196,246,293],[261,329,392],[392,493,587],[523,659,783]].forEach(([a,b,c],i)=>{
+        mk(a,'triangle',.12,.6,now+i*.1);mk(b,'sine',.1,.6,now+i*.1);mk(c,'sine',.09,.6,now+i*.1);
+      });
+      mk(1046,'sine',.15,.7,now+.52);mk(1318,'sine',.14,.75,now+.6);mk(1568,'sine',.13,.8,now+.68);mk(2093,'sine',.1,.7,now+.76);
+      [0,.2,.4,.6,.8].forEach(t=>noise(.06,.1,now+t));
+    }
+    else if(type==='fail'){
+      // 픽셀 게임 실패음 — 하강 계단 + 충격
+      [392,329,262,196,131].forEach((f,i)=>mk(f,'square',.11,.2,now+i*.08));
+      // 충격 노이즈
+      noise(.18,.1,now);noise(.12,.08,now+.06);
+      // 낮은 하강
+      const of=ac.createOscillator(),gf=ac.createGain();
+      of.type='sawtooth';of.frequency.setValueAtTime(160,now);
+      of.frequency.exponentialRampToValueAtTime(28,now+.6);
+      gf.gain.setValueAtTime(.18*vol,now);gf.gain.exponentialRampToValueAtTime(.001,now+.7);
+      of.connect(gf);gf.connect(ac.destination);of.start(now);of.stop(now+.7);
+    }
+    else if(type==='restore'){
+      [329,415,493,622,830].forEach((f,i)=>mk(f,'sine',.1,.3,now+i*.08));
+    }
+    else if(type==='buy'){
+      mk(880,'sine',.1,.12);mk(1108,'sine',.09,.14,now+.11);
+    }
+    else if(type==='sell'){
+      [523,784,1047,1318].forEach((f,i)=>mk(f,'sine',.1,.22,now+i*.07));
+      noise(.05,.08,now+.18);
+    }
   }catch(e){}
 }
 
@@ -901,6 +1199,7 @@ function saveGame(){
     totalLevel:S.totalLevel, gold:S.gold,
     orbs:S.orbs, scrolls:S.scrolls, orbUse:S.orbUse,
     volume:S.volume, muted:S.muted, theme:S.theme||'dark', fontSize:S.fontSize||100,
+    lv:S.lv, xp:S.xp, qp:S.qp, qd:S.qd, qbest:S.qbest||{}, qt:S.qt,
     log:S.log.slice(0,20),
     savedAt:new Date().toLocaleString('ko-KR'),
   };
@@ -922,6 +1221,8 @@ function loadGame(){
     S.orbUse=data.orbUse||false;
     S.volume=data.volume!=null?data.volume:0.8;
     S.muted=data.muted||false;
+    S.lv=data.lv||1; S.xp=data.xp||0;
+    S.qp=data.qp||{}; S.qd=data.qd||{}; S.qbest=data.qbest||{}; S.qt=data.qt||{sells:0,scrollBuy:0,orbBuy:0};
     S.theme=data.theme||'dark';
     S.fontSize=data.fontSize||100;
     setTheme(S.theme);
@@ -976,6 +1277,38 @@ function closeSettings(){document.getElementById('settingsModal').classList.remo
 //  CHANGELOG
 // ══════════════════════════════════════════════════════
 const CHANGELOG=[
+  {
+    ver:'v1.1.2', date:'2026-05-28', tag:'minor',
+    items:[
+      {type:'added',   text:'25~29단계 강화 화면에 절대파괴 확률 빨간색 표시'},
+      {type:'added',   text:'퀘스트 추가 — 전설의 검 제작(+25), 신화의 검 제작(+30)'},
+      {type:'changed', text:'연속 실패 퀘스트 — 1단계 → 0단계(+0→+1) 기준으로 변경'},
+      {type:'changed', text:'27~29단계 판매가 2배 증가'},
+      {type:'changed', text:'+30 신화의 검 판매가 10배 증가'},
+      {type:'fixed',   text:'절대 파괴 이후 무결점 퀘스트 진행이 인정되지 않는 버그 수정'},
+      {type:'added',   text:'설정 창 의견 보내기 → 디스코드 서버 링크로 변경'},
+      {type:'added',   text:'퀘스트 추가 — 전설의 검 제작(+25), 신화의 검 제작(+30)'},
+      {type:'changed', text:'25~26단계 판매가 +25% 증가'},
+      {type:'changed', text:'+30 신화의 검 판매가 50% 감소 (×10→×5)'},
+      {type:'changed', text:'절대파괴 확률 표시 위치를 강화 비용 칸 위로 이동'},
+      {type:'fixed',   text:'전설/신화의 검 퀘스트 게이지: 단계 수 → 0/1 도달 여부로 변경'},
+    ]
+  },
+  {
+    ver:'v1.1.0', date:'2026-05-25', tag:'major',
+    items:[
+      {type:'added',   text:'레벨 시스템 — 강화 성공 시 XP 10 획득, 레벨 뱃지 표시'},
+      {type:'added',   text:'퀘스트 시스템 — 무결점 단조 I/II/III (실패 없이 +10/15/20)'},
+      {type:'added',   text:'퀘스트 시스템 — 1단계 연속 실패 5/10/15번 고난 퀘스트'},
+      {type:'added',   text:'퀘스트 최고 기록 보존 — 실패 초기화 후에도 최고 진행도 게이지 유지'},
+      {type:'added',   text:'❓ 도움말 버튼 — 첫 실행 시 자동 표시, 총 6페이지 가이드'},
+      {type:'added',   text:'25~29단계 절대 파괴 확률 1~5% (복구 주문서 무효)'},
+      {type:'added',   text:'25~29단계 강화 결과 특별 확인 화면 — 클릭 후 반짝이는 연출'},
+      {type:'changed', text:'강화 성공 XP 100 → 10으로 조정'},
+      {type:'changed', text:'승급 성공 팝업 제거 (로그로만 표시)'},
+      {type:'changed', text:'25~29단계 복구 주문서 요구량 -50 감소'},
+    ]
+  },
   {
     ver:'v1.0.7', date:'2026-05-18', tag:'minor',
     items:[
@@ -1085,7 +1418,7 @@ function openChangelog(){
 function closeChangelog(){document.getElementById('changelogModal').classList.remove('show');}
 function changeVolume(v){S.volume=v/100;document.getElementById('volDisplay').textContent=v+'%';if(S.muted&&v>0){S.muted=false;updateMuteBtn();}}
 function toggleMute(){S.muted=!S.muted;updateMuteBtn();}
-function updateMuteBtn(){const btn=document.getElementById('muteBtn');btn.textContent=S.muted?'🔊 음소거 해제':'🔇 음소거';btn.classList.toggle('muted',S.muted);}
+function updateMuteBtn(){const btn=document.getElementById('muteBtn');btn.textContent=S.muted?'🔇':'🔊';btn.style.borderColor=S.muted?'var(--red)':'var(--border)';btn.style.color=S.muted?'var(--red)':'var(--text)';}
 
 // ══════════════════════════════════════════════════════
 //  FIREWORKS
@@ -1125,11 +1458,650 @@ function animFW(){
 // ══════════════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
+//  ABSOLUTE DESTROY SYSTEM (25~29단계)
+// ══════════════════════════════════════════════════════
+let _absdestCallback = null;
+let _absdestAnimRaf  = null;
+let _absdestClicked  = false;
+
+function showAbsdestSuspense(success, isAbsDestroy, def, lvl, isAuto){
+  const overlay    = document.getElementById('absdestOverlay');
+  const svgEl      = document.getElementById('absdestSvg');
+  const crackSvg   = document.getElementById('swordCrackSvg');
+  const hintText   = document.getElementById('absdestHintText');
+  const resultText = document.getElementById('absdestResultText');
+  const canvas     = document.getElementById('absdestCanvas');
+  const ctx        = canvas.getContext('2d');
+
+  // ── Setup sword SVG in stage ──
+  svgEl.innerHTML = makeSwordSVG(lvl, 110).replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '');
+  svgEl.style.filter = `drop-shadow(0 0 16px #ffffff88) drop-shadow(0 0 32px #ffffff44)`;
+  svgEl.style.transform = 'rotate(-4deg)';
+  svgEl.style.transition = 'filter .4s, transform .4s';
+  crackSvg.style.opacity = '0';
+  crackSvg.style.transition = 'opacity .3s';
+  resultText.textContent = '';
+  resultText.classList.remove('show');
+  hintText.style.opacity = '1';
+  _absdestClicked = false;
+
+  // Resize canvas
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  overlay.classList.add('show');
+
+  // ── Convergence particles — always WHITE regardless of result ──
+  const cx = canvas.width  * 0.5;
+  const cy = canvas.height * 0.52;
+  const WHITE = '#ffffff';  // 수렴 연출은 항상 흰색
+
+  const PARTICLES = [];
+  const COUNT = 80;
+  for(let i = 0; i < COUNT; i++){
+    const angle = Math.random() * Math.PI * 2;
+    const r     = 200 + Math.random() * 300;
+    PARTICLES.push({
+      x: cx + Math.cos(angle) * r,
+      y: cy + Math.sin(angle) * r,
+      tx: cx + (Math.random()-0.5)*20,
+      ty: cy + (Math.random()-0.5)*20,
+      size: 2 + Math.random() * 4,
+      speed: 0.015 + Math.random() * 0.025,
+      t: 0,
+      color: WHITE,
+    });
+  }
+  let phase = 'waiting'; // waiting → converge → pause → reveal
+  let convergeStart = 0;
+  let pauseStart = 0;
+  const CONVERGE_DUR = 2000;
+  const startTime = performance.now();
+
+  function drawFrame(now){
+    if(overlay.style.opacity === '0' || !overlay.classList.contains('show')){ cleanupAnim(); return; }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // ── Phase: waiting ──
+    if(phase === 'waiting'){
+      const pulse = (Math.sin(now * 0.003) + 1) * 0.5;
+      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 50);
+      grd.addColorStop(0, '#ffffff33');
+      grd.addColorStop(1, 'transparent');
+      ctx.globalAlpha = 0.3 + pulse * 0.3;
+      ctx.fillStyle = grd;
+      ctx.beginPath(); ctx.arc(cx, cy, 50, 0, Math.PI*2); ctx.fill();
+      ctx.globalAlpha = 1;
+      _absdestAnimRaf = requestAnimationFrame(drawFrame);
+      return;
+    }
+
+    // ── Phase: converge ──
+    if(phase === 'converge'){
+      const elapsed = now - convergeStart;
+      const prog = Math.min(1, elapsed / CONVERGE_DUR);
+      const ease = prog < 0.5 ? 2*prog*prog : -1+(4-2*prog)*prog;
+      PARTICLES.forEach(p=>{
+        const px = p.x + (p.tx - p.x) * ease;
+        const py = p.y + (p.ty - p.y) * ease;
+        ctx.globalAlpha = (1 - ease * 0.5) * 0.85;
+        ctx.fillStyle = WHITE;
+        ctx.shadowColor = WHITE;
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.arc(px, py, p.size * (1 - ease * 0.5), 0, Math.PI*2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+
+      if(elapsed >= CONVERGE_DUR){
+        phase = 'pause';
+        pauseStart = now;
+        // 흰색 글로우 집중 — 아직 결과 색상 미공개
+        svgEl.style.filter = `drop-shadow(0 0 30px #ffffff) drop-shadow(0 0 60px #ffffffaa)`;;
+      }
+    }
+
+    // ── Phase: pause (0.5s) — 짧게 멈추다가 "빵!" 결과 공개 ──
+    if(phase === 'pause'){
+      const pg = Math.min(1, (now - pauseStart) / 500);
+      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 60);
+      grd.addColorStop(0, '#ffffff99');
+      grd.addColorStop(1, 'transparent');
+      ctx.globalAlpha = (1 - pg) * 0.7;
+      ctx.fillStyle = grd;
+      ctx.beginPath(); ctx.arc(cx, cy, 60, 0, Math.PI*2); ctx.fill();
+      ctx.globalAlpha = 1;
+      if(pg >= 1){ phase = 'reveal'; doReveal(); return; }
+    }
+
+    _absdestAnimRaf = requestAnimationFrame(drawFrame);
+  }
+
+  function doReveal(){
+    hintText.style.opacity = '0';
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if(success){
+      // ── SUCCESS: 검이 반짝이고 빛 파티클 ──
+      svgEl.style.transition = 'filter .15s, transform .3s';
+      svgEl.style.filter = `drop-shadow(0 0 60px #ffffff) drop-shadow(0 0 80px ${def.color}) brightness(2)`;
+      svgEl.style.transform = 'rotate(-4deg) scale(1.15)';
+      playTone(isAbsDestroy?'fail': (getSwordDef(lvl+1)!==def)?'ascend':'success');
+
+      // Burst light particles from center
+      const pColors = ['#ffffff', '#ffffee', '#ffff88', '#ffdd00', '#ffffff'];
+      for(let i = 0; i < 40; i++){
+        const angle = Math.random()*Math.PI*2;
+        const dist  = 60 + Math.random()*120;
+        const p = document.createElement('div');
+        p.className = 'ptcl';
+        p.style.fontSize = (0.8 + Math.random()*0.8)+'rem';
+        p.innerHTML = '✦';
+        p.style.color = pColors[Math.floor(Math.random()*pColors.length)];
+        p.style.cssText += `;left:${30+Math.random()*40}%;top:${35+Math.random()*30}%;` +
+          `--dx:${Math.cos(angle)*dist}px;--dy:${Math.sin(angle)*dist}px;` +
+          `animation-delay:${Math.random()*.2}s;animation-duration:.9s`;
+        document.body.appendChild(p);
+        setTimeout(()=>p.remove(), 1200);
+      }
+      // Ring flash on canvas
+      let ringT = 0;
+      function drawRing(now2){
+        ringT += 0.04;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if(ringT < 1){
+          const r = ringT * 180;
+          const grd = ctx.createRadialGradient(cx,cy,r*0.7,cx,cy,r);
+          grd.addColorStop(0,'transparent');
+          grd.addColorStop(0.7, '#ffffff60');
+          grd.addColorStop(1,'transparent');
+          ctx.globalAlpha = Math.max(0, 1 - ringT);
+          ctx.fillStyle = grd;
+          ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill();
+          ctx.globalAlpha = 1;
+          requestAnimationFrame(drawRing);
+        } else {
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          // show result text
+          const nextLvl = lvl+1;
+          const nextDef = getSwordDef(nextLvl);
+          const isAscend = nextDef !== def;
+          const isMax = nextLvl >= MAX_LEVEL;
+          // 빵! — instant result reveal
+          resultText.style.transition = 'none';
+          resultText.style.opacity = '1';
+          resultText.style.color = isMax?'#ff88ff':'#f0c040';
+          resultText.textContent = isMax?'🏆 신화 달성!':(isAscend?`🌟 ${nextDef.name} 승급!`:`✨ +${nextLvl} 강화 성공!`);
+          resultText.classList.add('show');
+          svgEl.style.filter = `drop-shadow(0 0 20px ${def.color})`;
+          svgEl.style.transform = 'rotate(-4deg) scale(1)';
+          setTimeout(()=>{
+            cleanupAndProcess(success, isAbsDestroy, def, lvl, isAuto);
+          }, 1800);
+        }
+      }
+      requestAnimationFrame(drawRing);
+
+    } else {
+      // ── ABSOLUTE DESTROY: 검이 깨짐 ──
+      svgEl.style.transition = 'filter .2s, transform .3s, opacity .5s';
+      svgEl.style.filter = `drop-shadow(0 0 40px #ff0000) brightness(0.5)`;
+      svgEl.style.transform = 'rotate(-4deg) scale(0.9)';
+      playTone('fail');
+      // Show cracks
+      setTimeout(()=>{
+        crackSvg.style.opacity = '1';
+        svgEl.style.filter = `drop-shadow(0 0 20px #cc0000) brightness(0.3)`;
+        // Burst red particles
+        for(let i=0;i<20;i++){
+          const angle=Math.random()*Math.PI*2, dist=50+Math.random()*100;
+          const p=document.createElement('div'); p.className='ptcl';
+          p.innerHTML='💥'; p.style.fontSize='1.1rem';
+          p.style.cssText+=`;left:${30+Math.random()*40}%;top:${30+Math.random()*40}%;`+
+            `--dx:${Math.cos(angle)*dist}px;--dy:${Math.sin(angle)*dist}px;`+
+            `animation-delay:${Math.random()*.2}s;animation-duration:1s`;
+          document.body.appendChild(p); setTimeout(()=>p.remove(),1300);
+        }
+        // Shake
+        svgEl.style.animation='sw-shake .5s ease';
+        setTimeout(()=>{ svgEl.style.animation=''; },500);
+        // 빵! — instant shatter + text
+        setTimeout(()=>{
+          svgEl.style.opacity='0';
+          svgEl.style.transform='rotate(-4deg) scale(0.3)';
+          resultText.style.transition='none';
+          resultText.style.opacity='1';
+          resultText.style.color='#ff3333';
+          resultText.textContent='☠️ 절대 파괴!';
+          resultText.classList.add('show');
+          setTimeout(()=>{
+            cleanupAndProcess(success, isAbsDestroy, def, lvl, isAuto);
+          }, 1500);
+        }, 300);
+      }, 300);
+    }
+  }
+
+  function cleanupAnim(){
+    if(_absdestAnimRaf){ cancelAnimationFrame(_absdestAnimRaf); _absdestAnimRaf=null; }
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+
+  _absdestAnimRaf = requestAnimationFrame(drawFrame);
+
+  _absdestCallback = ()=>{
+    if(phase === 'waiting'){
+      // 클릭 → 수렴 연출 시작
+      phase = 'converge';
+      convergeStart = performance.now();
+      hintText.style.opacity = '0';
+      svgEl.style.filter = `drop-shadow(0 0 16px #ffffff88) drop-shadow(0 0 32px #ffffff44)`;
+    } else if(phase === 'converge' && !_absdestClicked){
+      // 수렴 중 클릭 → 수렴 스킵 (바로 pause로)
+      _absdestClicked = true;
+      convergeStart = performance.now() - CONVERGE_DUR;
+    }
+  };
+}
+
+function cleanupAndProcess(success, isAbsDestroy, def, lvl, isAuto){
+  const overlay = document.getElementById('absdestOverlay');
+  overlay.classList.remove('show');
+  // Reset SVG state
+  const svgEl = document.getElementById('absdestSvg');
+  svgEl.style.opacity='1'; svgEl.style.transform='rotate(-4deg)';
+  document.getElementById('swordCrackSvg').style.opacity='0';
+  document.getElementById('absdestResultText').classList.remove('show');
+  // Cancel animation
+  if(_absdestAnimRaf){ cancelAnimationFrame(_absdestAnimRaf); _absdestAnimRaf=null; }
+  const canvas=document.getElementById('absdestCanvas');
+  canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+  _absdestCallback=null;
+
+  S.busy=false;
+  if(isAbsDestroy){
+    checkQuests('fail',{level:lvl});
+    applyAbsDestruction(def,lvl,isAuto);
+  } else {
+    const nextLvl=lvl+1;
+    const nextDef=getSwordDef(nextLvl);
+    const isAscend=nextDef!==def;
+    const isMax=nextLvl>=MAX_LEVEL;
+    S.totalLevel=nextLvl;
+    if(isMax){
+      launchFireworks();
+      addLog(`🏆 신화의 검 +30 달성! 최고 단계!`,'lok');
+      gainXP(10,'강화 성공');checkQuests('success',{level:S.totalLevel});
+      if(!isAuto) showSimpleResult('ok','🏆','신화 달성!',`신화의 검 +30!\n최고 강화 단계를 달성했습니다!`);
+      launchPtcl('🏆');launchPtcl('🌟');
+      if(S.autoOn||S.pendingStop){S.autoOn=false;S.pendingStop=false;updateEnhUI();showAutoReport();}
+    } else {
+      if(isAscend) addLog(`🌟 ${def.name} → ${nextDef.name} 승급! (+${S.totalLevel})`,'lok');
+      else         addLog(`✨ +${S.totalLevel} 강화 성공!`,'lok');
+      gainXP(10,'강화 성공');checkQuests('success',{level:S.totalLevel});
+      launchPtcl(isAscend?'🌟':'✨');
+      if(isAuto){
+        const tgt=S.autoCfg.target;
+        if(tgt>0&&S.totalLevel>=tgt){
+          if(S.autoCfg.action==='sell') autoSell();
+          else{S.autoOn=false;updateEnhUI();addLog(`⏹ 목표 단계 +${tgt} 도달, 자동 정지`,'lblue');showAutoReport();}
+        } else scheduleAuto();
+      }
+    }
+  }
+  updateAll();
+  if(S.pendingStop&&!S.autoOn){S.pendingStop=false;showAutoReport();}
+}
+
+function absdestClick(){
+  if(_absdestCallback) _absdestCallback();
+}
+
+function applyAbsDestruction(def,prevLvl,isAuto){
+  S.totalLevel=0; S.orbUse=false;
+  S.noFailInvalid=false; // abs destroy resets the run — no_fail quests can restart
+  checkQuests('fail',{level:prevLvl}); // reset no_fail progress on abs destroy too
+  if(isAuto) S.autoStats.destroyedCount++;
+  addLog(`☠️ ${def.name} +${prevLvl} 절대 파괴! (복구 불가) → +0 초기화`,'lfail');
+  if(!isAuto) showSimpleResult('fail','☠️','절대 파괴!',`${def.name} +${prevLvl}이(가)
+절대 파괴되었습니다.
+복구 주문서로 막을 수 없습니다.`);
+  launchPtcl('💥');
+}
+
 function init(){
-  buildStars();buildInfoTable();updateAll();
-  ['cfmOverlay','resOverlay','infoModal','acfgOverlay','settingsModal','changelogModal'].forEach(id=>{
+  buildStars();buildInfoTable();
+  initQuests();
+  buildTutorial();
+  updateAll();
+  renderQuestTab();
+  // Show tutorial on every open
+  setTimeout(()=>openTutorial(),600);
+  ['cfmOverlay','resOverlay','infoModal','acfgOverlay','settingsModal','changelogModal','tutorialOverlay'].forEach(id=>{
     document.getElementById(id).addEventListener('click',e=>{if(e.target.id===id)document.getElementById(id).classList.remove('show');});
   });
+}
+
+// ══════════════════════════════════════════════════════
+//  LEVEL SYSTEM
+// ══════════════════════════════════════════════════════
+// XP thresholds per level (cumulative XP needed for each level)
+function xpForLevel(lv){ return Math.floor(80 * Math.pow(1.35, lv-1)); }
+
+function gainXP(amount, reason){
+  S.xp += amount;
+  addLog(`✨ +${amount} XP (${reason})`,'lblue');
+  let leveled=false;
+  while(S.xp >= xpForLevel(S.lv+1)){
+    S.xp -= xpForLevel(S.lv+1);
+    S.lv++;
+    leveled=true;
+    showLvUp(S.lv);
+  }
+  updateLevelUI();
+}
+
+function updateLevelUI(){
+  const needed = xpForLevel(S.lv+1);
+  const pct = Math.min(100, Math.round(S.xp/needed*100));
+  document.getElementById('lvBadge').textContent = `Lv.${S.lv}`;
+  document.getElementById('lvXpNum').textContent  = `${S.xp.toLocaleString()} / ${needed.toLocaleString()}`;
+  document.getElementById('lvXpFill').style.width  = pct+'%';
+}
+
+function showLvUp(lv){
+  const ov=document.getElementById('lvupOverlay');
+  document.getElementById('lvupTitle').textContent='레벨 업!';
+  document.getElementById('lvupSub').textContent=`Lv.${lv} 달성!`;
+  ov.classList.add('show');
+  setTimeout(()=>ov.classList.remove('show'),2200);
+}
+
+// ══════════════════════════════════════════════════════
+//  QUEST SYSTEM
+// ══════════════════════════════════════════════════════
+// quest state: progress counters
+// S.qp = {questId: currentProgress}
+// S.qd = {questId: true}  — done
+
+const QUESTS = [
+  // ── 도전: 실패 없이 달성 ──
+
+  {id:'q_no_fail_15', cat:'🎯 무결점 도전', icon:'🎯',
+   name:'무결점 단조 II',
+   desc:'실패 없이 +15 단계까지 강화하세요.\n(한 번이라도 파괴되면 카운트 초기화)',
+   type:'no_fail_to', target:15, max:15,
+   reward:{gold:20000, xp:2500, orbs:8, scrolls:5}},
+  {id:'q_no_fail_20', cat:'🎯 무결점 도전', icon:'🎯',
+   name:'무결점 단조 III',
+   desc:'실패 없이 +20 단계까지 강화하세요.\n(한 번이라도 파괴되면 카운트 초기화)',
+   type:'no_fail_to', target:20, max:20,
+   reward:{gold:60000, xp:6000, orbs:15, scrolls:10}},
+  // ── 고난: 0단계에서 연속 실패 ──
+  {id:'q_fail5_at0', cat:'💀 고난의 길', icon:'😈',
+   name:'0단계의 저주',
+   desc:'+0 → +1 강화에서 연속으로 5번 실패하세요.\n(성공하면 카운트 초기화)',
+   type:'consec_fail_at', atLevel:0, target:5, max:5,
+   reward:{scrolls:5, xp:300}},
+  {id:'q_fail10_at0', cat:'💀 고난의 길', icon:'💀',
+   name:'0단계의 악몽',
+   desc:'+0 → +1 강화에서 연속으로 10번 실패하세요.\n(성공하면 카운트 초기화)',
+   type:'consec_fail_at', atLevel:0, target:10, max:10,
+   reward:{scrolls:15, xp:800}},
+  // ── 목표 달성 ──
+  {id:'q_legend_sword', cat:'🏆 목표 달성', icon:'🌟',
+   name:'전설의 검 제작',
+   desc:'+25 단계 전설의 검을 만드세요.',
+   type:'reached_once', target:25, max:1,
+   reward:{gold:50000, xp:5000, orbs:10, scrolls:20}},
+  {id:'q_myth_sword', cat:'🏆 목표 달성', icon:'👑',
+   name:'신화의 검 제작',
+   desc:'+30 단계 신화의 검을 완성하세요.',
+   type:'reached_once', target:30, max:1,
+   reward:{gold:200000, xp:20000, orbs:20, scrolls:50}},
+];
+
+function initQuests(){
+  if(!S.qp) S.qp={};
+  if(!S.qd) S.qd={};
+  if(!S.qbest) S.qbest={};
+  if(!S.qt) S.qt={};
+  if(!S.qbest) S.qbest={};  // totals tracker: sells, scrollBuy, orbBuy
+  if(!S.qt.sells)    S.qt.sells=0;
+  if(!S.qt.scrollBuy) S.qt.scrollBuy=0;
+  if(!S.qt.orbBuy)   S.qt.orbBuy=0;
+  // init no_fail_to trackers
+  QUESTS.filter(q=>q.type==='no_fail_to').forEach(q=>{
+    if(S.qp[q.id]===undefined) S.qp[q.id]=0; // currentNoFailLevel
+  });
+  QUESTS.filter(q=>q.type==='consec_fail_at').forEach(q=>{
+    if(S.qp[q.id]===undefined) S.qp[q.id]=0;
+  });
+  QUESTS.filter(q=>q.type==='reach_level'||q.type==='total_sells'||q.type==='total_scroll_buy'||q.type==='total_orb_buy').forEach(q=>{
+    if(S.qp[q.id]===undefined) S.qp[q.id]=0;
+  });
+}
+
+function checkQuests(event, data){
+  // event types: 'success', 'fail', 'sell', 'buy_scroll', 'buy_orb'
+  QUESTS.forEach(q=>{
+    if(S.qd[q.id]) return; // already done
+    let prog=S.qp[q.id]||0;
+    let completed=false;
+
+    if(q.type==='reach_level'){
+      if(event==='success'||event==='sell'){
+        prog=S.totalLevel;
+        if(prog>=q.target) completed=true;
+      }
+    }
+    else if(q.type==='reached_once'){
+      // prog is 0 (not reached) or 1 (reached). Increments to 1 when target hit.
+      if(prog<1&&(event==='success'||event==='sell')){
+        if(S.totalLevel>=q.target){ prog=1; completed=true; }
+      }
+    }
+    else if(q.type==='no_fail_to'){
+      if(event==='success'&&!S.noFailInvalid){
+        prog=S.totalLevel;
+        if(prog>(S.qbest[q.id]||0)) S.qbest[q.id]=prog; // record best
+        if(prog>=q.target) completed=true;
+      } else if(event==='fail'||event==='restore_used'){
+        prog=0; // reset on fail OR scroll use
+      }
+    }
+    else if(q.type==='consec_fail_at'){
+      if(event==='fail'&&data&&data.level===q.atLevel){
+        prog++;
+        if(prog>(S.qbest[q.id]||0)) S.qbest[q.id]=prog; // record best streak
+        if(prog>=q.target) completed=true;
+      } else if(event==='success'&&data&&data.level===q.atLevel){
+        prog=0; // reset current run streak, qbest preserved
+      }
+    }
+    else if(q.type==='total_sells'){
+      if(event==='sell'){ prog++; if(prog>=q.target) completed=true; }
+    }
+    else if(q.type==='total_scroll_buy'){
+      if(event==='buy_scroll'){ prog+=(data&&data.qty)||1; if(prog>=q.target) completed=true; }
+    }
+    else if(q.type==='total_orb_buy'){
+      if(event==='buy_orb'){ prog+=(data&&data.qty)||1; if(prog>=q.target) completed=true; }
+    }
+
+    S.qp[q.id]=prog;
+    if(completed) completeQuest(q);
+  });
+  renderQuestTab();
+}
+
+function completeQuest(q){
+  S.qd[q.id]=true;
+  const r=q.reward;
+  if(r.gold)    { S.gold+=r.gold; addLog(`🎉 퀘스트 완료: ${q.name} (+${r.gold.toLocaleString()}골드)`,'lok'); }
+  if(r.orbs)    { S.orbs+=r.orbs; }
+  if(r.scrolls) { S.scrolls+=r.scrolls; }
+  if(r.xp)      { gainXP(r.xp, `퀘스트: ${q.name}`); }
+  // 퀘스트 완료 창 없음 - 로그로만 표시
+  updateAll();
+}
+
+function showQuestComplete(q){
+  const r=q.reward;
+  const rewardText=[
+    r.gold?   `💰 ${r.gold.toLocaleString()} 골드`:'',
+    r.xp?     `💠 ${r.xp} XP`:'',
+    r.orbs?   `✨ 오브 ${r.orbs}개`:'',
+    r.scrolls?`📜 주문서 ${r.scrolls}개`:'',
+  ].filter(Boolean).join('  ');
+  showSimpleResult('ok','🎉',`퀘스트 완료!\n${q.name}`,`${q.desc}\n\n보상: ${rewardText}`);
+}
+
+function renderQuestTab(){
+  const el=document.getElementById('questContent');
+  if(!el) return;
+  const cats=[...new Set(QUESTS.map(q=>q.cat))];
+  const doneCount=QUESTS.filter(q=>S.qd[q.id]).length;
+  let html=`<div style="font-size:.72rem;color:var(--dim);margin-bottom:12px;text-align:right">${doneCount}/${QUESTS.length} 완료</div>`;
+  cats.forEach(cat=>{
+    html+=`<div class="quest-section-title">${cat}</div><div class="quest-list">`;
+    QUESTS.filter(q=>q.cat===cat).forEach(q=>{
+      const done=S.qd[q.id];
+      const prog=S.qp[q.id]||0;
+      const pct=Math.min(100,Math.round(prog/q.max*100));
+      const r=q.reward;
+      const rewards=[
+        r.gold?   `<span class="quest-reward-item gold">💰 ${r.gold.toLocaleString()}</span>`:'',
+        r.xp?     `<span class="quest-reward-item xp">💠 ${r.xp} XP</span>`:'',
+        r.orbs?   `<span class="quest-reward-item orb">✨ 오브 ${r.orbs}</span>`:'',
+        r.scrolls?`<span class="quest-reward-item scroll">📜 주문서 ${r.scrolls}</span>`:'',
+      ].filter(Boolean).join('');
+      const barColor=done?'var(--green)':pct>60?'var(--blue)':pct>30?'var(--gold)':'var(--red)';
+      html+=`<div class="quest-card${done?' done':''}">
+        <div class="quest-card-top">
+          <span class="quest-icon">${q.icon}</span>
+          <div class="quest-info">
+            <div class="quest-name">${q.name}</div>
+            <div class="quest-desc">${q.desc.replace(/\n/g,'<br>')}</div>
+          </div>
+        </div>
+        <div class="quest-progress-row">
+          <div class="quest-prog-bar" style="position:relative;overflow:visible">
+            ${(!done&&(S.qbest[q.id]||0)>0)?`<div style="position:absolute;left:${Math.min(100,Math.round((S.qbest[q.id]||0)/q.max*100))}%;top:-2px;width:2px;height:10px;background:#8888cc;border-radius:1px;transform:translateX(-50%);z-index:2"></div>`:''}
+            <div class="quest-prog-fill" style="width:${done?100:pct}%;background:${barColor}"></div>
+
+          </div>
+          <div class="quest-prog-label">${done?'완료':prog+' / '+q.max+(S.qbest[q.id]&&S.qbest[q.id]>prog?' (최고:'+S.qbest[q.id]+')':'')}</div>
+        </div>
+        <div class="quest-reward">${rewards}</div>
+      </div>`;
+    });
+    html+='</div>';
+  });
+  el.innerHTML=html;
+}
+
+// ══════════════════════════════════════════════════════
+//  TUTORIAL
+// ══════════════════════════════════════════════════════
+const TUTORIAL_PAGES=[
+  {icon:'⚔️', title:'전설의 검이란?',
+   body:`<span class="tut-highlight">전설의 검</span>은 검을 강화해서 최고 단계인 <span class="tut-highlight">+30 신화의 검</span>을 만드는 게임입니다.
+
+강화할 때마다 <span class="tut-good">골드</span>를 소모하며, 성공하면 단계가 오릅니다.
+하지만 실패하면 <span class="tut-warn">검이 파괴</span>되어 +0으로 초기화됩니다!`},
+  {icon:'⚡', title:'강화 탭',
+   body:`<span class="tut-highlight">⚡ 강화</span> 탭에서 강화를 시도합니다.
+
+• <span class="tut-good">성공률</span> — 높을수록 안전합니다 (초반 ~90%, 후반 ~2%)
+• <span class="tut-good">강화 비용</span> — 단계가 높을수록 비용 증가
+• <span class="tut-highlight">✨ 축복의 오브</span> — 현재 성공률의 +10% 추가
+• <span class="tut-warn">파괴 시</span> — +0으로 초기화됩니다
+
+📊 단계별 정보 버튼으로 모든 단계의 수치를 확인할 수 있습니다.`},
+  {icon:'🏪', title:'상점 탭',
+   body:`<span class="tut-highlight">🏪 상점</span>은 <span class="tut-warn">+0 단계일 때만</span> 이용 가능합니다.
+
+• <span class="tut-highlight">✨ 축복의 오브</span> — 1,000 골드 · 성공률 +10%
+• <span class="tut-highlight">📜 복구 주문서</span> — 250 골드 · 실패 시 복구
+  (필요 개수는 단계마다 다릅니다)
+
+<span class="tut-good">팁</span>: 상점에 오기 전에 미리 넉넉히 구매해 두세요!`},
+  {icon:'💰', title:'판매 탭',
+   body:`<span class="tut-highlight">💰 판매</span> 탭에서 현재 검을 팔 수 있습니다.
+
+• <span class="tut-warn">+0은 판매 불가</span>
+• 단계가 높을수록 판매가가 급격히 상승합니다
+• <span class="tut-good">+10 이상</span>부터 본격적으로 수익이 납니다
+
+판매하면 <span class="tut-highlight">낡은 단검 +0</span>으로 다시 시작합니다.`},
+  {icon:'🔁', title:'자동 강화',
+   body:`<span class="tut-highlight">🔁 자동 강화</span>를 누르면 설정 창이 열립니다.
+
+• <span class="tut-highlight">목표 단계</span> — 몇 단계에서 행동할지 설정
+• <span class="tut-good">자동 판매 후 반복</span> — 목표에서 판매 후 반복
+• <span class="tut-highlight">그 단계에서 정지</span> — 목표 도달 시 멈춤
+• <span class="tut-highlight">복구 주문서 자동 사용</span> — 실패 시 자동 복구
+
+<span class="tut-warn">자동 강화 중 축복의 오브는 사용되지 않습니다.</span>`},
+  {icon:'📋', title:'퀘스트 & 레벨',
+   body:`<span class="tut-highlight">📋 퀘스트</span> 탭에서 목표를 달성하고 보상을 받으세요.
+
+• 강화 성공 시 <span class="tut-good">소량의 경험치(XP)</span> 획득
+• 퀘스트 클리어 시 <span class="tut-good">대량의 XP + 아이템</span> 보상
+• 레벨업 시 뱃지가 올라갑니다 🎉
+
+<span class="tut-highlight">도전 퀘스트</span>는 매우 어렵습니다...
+<span class="tut-warn">무결점 단조</span>는 한 번의 실패도 허용하지 않습니다!`},
+];
+let tutPage=0;
+function buildTutorial(){
+  const pages=document.getElementById('tutPages');
+  const dots=document.getElementById('tutDots');
+  if(!pages||!dots) return;
+  pages.innerHTML=TUTORIAL_PAGES.map((p,i)=>
+    `<div class="tutorial-page${i===0?' active':''}" id="tutP${i}">
+      <div class="tut-icon">${p.icon}</div>
+      <div class="tut-title">${p.title}</div>
+      <div class="tut-body">${p.body}</div>
+    </div>`).join('');
+  dots.innerHTML=TUTORIAL_PAGES.map((_,i)=>
+    `<div class="tut-dot${i===0?' active':''}" id="tutDot${i}"></div>`).join('');
+  // Replace close button if last page already shown
+  updateTutNav();
+}
+function openTutorial(){ tutPage=0; updateTutPage(); document.getElementById('tutorialOverlay').classList.add('show'); }
+function closeTutorial(){ document.getElementById('tutorialOverlay').classList.remove('show'); }
+function tutNav(d){
+  tutPage=Math.max(0,Math.min(TUTORIAL_PAGES.length-1,tutPage+d));
+  updateTutPage();
+}
+function updateTutPage(){
+  TUTORIAL_PAGES.forEach((_,i)=>{
+    const p=document.getElementById('tutP'+i); if(p) p.classList.toggle('active',i===tutPage);
+    const d=document.getElementById('tutDot'+i); if(d) d.classList.toggle('active',i===tutPage);
+  });
+  updateTutNav();
+}
+function updateTutNav(){
+  const prev=document.getElementById('tutPrev');
+  const next=document.getElementById('tutNext');
+  if(!prev||!next) return;
+  const last=tutPage===TUTORIAL_PAGES.length-1;
+  prev.style.visibility=tutPage===0?'hidden':'visible';
+  if(last){
+    next.textContent='완료 ✔';
+    next.onclick=closeTutorial;
+    next.style.borderColor='var(--gold)';
+    next.style.color='var(--gold)';
+  } else {
+    next.textContent='다음 ▶';
+    next.onclick=()=>tutNav(1);
+    next.style.borderColor='var(--blue)';
+    next.style.color='var(--blue)';
+  }
 }
 function buildStars(){
   const c=document.getElementById('stars');
@@ -1178,7 +2150,7 @@ function closeInfoModal(){document.getElementById('infoModal').classList.remove(
 //  UPDATE UI
 // ══════════════════════════════════════════════════════
 function updateAll(){
-  updateSwordUI();updateEnhUI();updateShopUI();updateSellUI();
+  updateSwordUI();updateEnhUI();updateShopUI();updateSellUI();updateLevelUI();
   document.getElementById('goldDisplay').textContent=S.gold.toLocaleString();
 }
 function updateSwordUI(){
@@ -1205,6 +2177,15 @@ function updateEnhUI(){
   document.getElementById('orbCheck').classList.toggle('on',S.orbUse&&hasOrbs&&!atMax);
   document.getElementById('orbSub').textContent=
     `보유 ${S.orbs}개 · 현재 확률 ${Math.round(baseRate*100)}% + ${Math.round(bonus*100)}% = ${Math.round(prob*100)}%`;
+  const absRowEl=document.getElementById('absRow');
+  if(absRowEl){
+    if(!atMax&&lvl>=25&&lvl<MAX_LEVEL){
+      absRowEl.style.display='block';
+      absRowEl.textContent=`☠️ 절대 파괴 확률 ${1+(lvl-25)}%`;
+    } else {
+      absRowEl.style.display='none';
+    }
+  }
   document.getElementById('costRow').innerHTML=atMax?
     `<span style="color:var(--gold)">✨ 최고 강화 단계 달성!</span>`:
     `강화 비용: <span>💰 ${cost.toLocaleString()}</span>`;
@@ -1254,8 +2235,9 @@ function updateSellUI(){
 // ══════════════════════════════════════════════════════
 function switchTab(name){
   playTone('click');
-  ['enhance','shop','sell'].forEach(t=>{document.getElementById('tab-'+t).style.display=t===name?'block':'none';});
-  document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',['enhance','shop','sell'][i]===name);});
+  ['enhance','shop','sell','quest'].forEach(t=>{const e=document.getElementById('tab-'+t);if(e)e.style.display=t===name?'block':'none';});
+  document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',['enhance','shop','sell','quest'][i]===name);});
+  if(name==='quest') renderQuestTab();
 }
 function toggleOrb(){
   if(S.orbs===0||S.totalLevel>=MAX_LEVEL) return;
@@ -1266,11 +2248,11 @@ function buyItem(item){
   if(S.totalLevel!==0) return;
   if(item==='orb'){
     const cost=1000*S.shopQty.orb;if(S.gold<cost)return;
-    S.gold-=cost;S.orbs+=S.shopQty.orb;
+    S.gold-=cost;S.orbs+=S.shopQty.orb;S.qt.orbBuy+=S.shopQty.orb;checkQuests('buy_orb',{qty:S.shopQty.orb});
     addLog(`✨ 축복의 오브 ${S.shopQty.orb}개 구매 (−${cost.toLocaleString()}골드)`,'lblue');playTone('buy');
   }else{
     const cost=250*S.shopQty.scroll;if(S.gold<cost)return;
-    S.gold-=cost;S.scrolls+=S.shopQty.scroll;
+    S.gold-=cost;S.scrolls+=S.shopQty.scroll;S.qt.scrollBuy+=S.shopQty.scroll;checkQuests('buy_scroll',{qty:S.shopQty.scroll});
     addLog(`📜 복구 주문서 ${S.shopQty.scroll}개 구매 (−${cost.toLocaleString()}골드)`,'lblue');playTone('buy');
   }
   updateAll();
@@ -1370,7 +2352,11 @@ function doEnhance(isAuto){
   else if(isAuto&&S.orbUse){S.orbUse=false;}    // auto: never consume orb
   if(isAuto) S.autoStats.attempts++;
 
-  const success=Math.random()<prob;
+  // Absolute destroy: lvl 25+ has 1~5% chance regardless of prob/scrolls
+  const absDestroyRate = lvl>=25 ? 0.01 + (lvl-25)*0.01 : 0; // 25->1%, 26->2%, 27->3%, 28->4%, 29->5%
+  const absRoll = Math.random();
+  const isAbsDestroy = lvl>=25 && absRoll<absDestroyRate;
+  const success = !isAbsDestroy && Math.random()<prob;
   const def=getSwordDef(lvl);
 
   const overlay=document.getElementById('enhOverlay');
@@ -1401,6 +2387,98 @@ function doEnhance(isAuto){
   const _runPhase2=()=>{
     clearInterval(sparkInt);sparks.innerHTML='';
 
+    // 25~29: show suspense screen only for success OR absolute destroy
+    if(lvl>=25&&(success||isAbsDestroy)){
+      if(isAuto){
+        // Auto: show animation in the enhance overlay, then process (no click-to-reveal)
+        const svgEl=svgWrap.querySelector('svg');
+        if(isAbsDestroy){
+          if(svgEl) svgEl.style.animation='sw-shake .55s ease';
+          spawnBurst(sparks,'#cc0000',20);
+          msg.style.color='#cc0000'; msg.textContent='☠️ 절대 파괴!';
+          playTone('fail');
+          setTimeout(()=>{
+            overlay.classList.remove('show');stopBtn.classList.remove('show');infoBar.style.display='none';
+            S.busy=false;
+            checkQuests('fail',{level:lvl});
+            applyAbsDestruction(def,lvl,isAuto);
+            updateAll();
+            if(S.autoOn) scheduleAuto();
+            else if(S.pendingStop){S.pendingStop=false;showAutoReport();}
+          },700);
+        } else {
+          // success
+          const nextLvl=lvl+1;
+          const nextDef=getSwordDef(nextLvl);
+          const isAscend=nextDef!==def;
+          const isMax=nextLvl>=MAX_LEVEL;
+          if(svgEl) svgEl.style.animation='sw-success .6s ease';
+          msg.style.color=isMax?'#ff88ff':isAscend?'#f0c040':'#38d878';
+          msg.textContent=isMax?'🏆 신화 달성!':isAscend?'🌟 승급!':'✨ 강화 성공!';
+          spawnBurst(sparks,isMax?'#ff88ff':isAscend?'#f0c040':def.color,isMax?30:isAscend?22:14);
+          playTone(isMax?'max':isAscend?'ascend':'success');
+          setTimeout(()=>{
+            overlay.classList.remove('show');stopBtn.classList.remove('show');infoBar.style.display='none';
+            S.busy=false;S.totalLevel=nextLvl;
+            if(isMax){
+              launchFireworks();
+              addLog(`🏆 신화의 검 +30 달성! 최고 단계!`,'lok');
+              gainXP(10,'강화 성공');checkQuests('success',{level:S.totalLevel});
+              launchPtcl('🏆');launchPtcl('🌟');
+              S.autoOn=false;S.pendingStop=false;updateEnhUI();showAutoReport();
+            } else {
+              if(isAscend) addLog(`🌟 ${def.name} → ${nextDef.name} 승급! (+${S.totalLevel})`,'lok');
+              else         addLog(`✨ +${S.totalLevel} 강화 성공!`,'lok');
+              gainXP(10,'강화 성공');checkQuests('success',{level:S.totalLevel});
+              launchPtcl(isAscend?'🌟':'✨');
+              const tgt=S.autoCfg.target;
+              if(tgt>0&&S.totalLevel>=tgt){
+                if(S.autoCfg.action==='sell') autoSell();
+                else{S.autoOn=false;updateEnhUI();addLog(`⏹ 목표 단계 +${tgt} 도달, 자동 정지`,'lblue');showAutoReport();}
+              } else scheduleAuto();
+            }
+            updateAll();
+            if(S.pendingStop&&!S.autoOn){S.pendingStop=false;showAutoReport();}
+          },700);
+        }
+        return;
+      }
+      // Manual: show click-to-reveal suspense screen
+      overlay.classList.remove('show');stopBtn.classList.remove('show');infoBar.style.display='none';
+      showAbsdestSuspense(success,isAbsDestroy,def,lvl,isAuto);
+      return;
+    }
+    // 25~29 normal fail: show shake animation in overlay, then process
+    if(lvl>=25&&!success&&!isAbsDestroy){
+      const svgEl=svgWrap.querySelector('svg');
+      if(svgEl) svgEl.style.animation='sw-shake .55s ease';
+      spawnBurst(sparks,'#ff3a3a',16);
+      msg.style.color='#ff3a3a'; msg.textContent='💀 파괴!';
+      playTone('fail');
+      setTimeout(()=>{
+        overlay.classList.remove('show');stopBtn.classList.remove('show');infoBar.style.display='none';
+        S.busy=false;
+        checkQuests('fail',{level:lvl});
+        if(!isAuto){
+          const req=scrollRequired(S.totalLevel);
+          if(req>0&&S.scrolls>=req) askRestore(def,req);
+          else{ applyDestruction(def,false); updateAll(); }
+        } else {
+          const req=scrollRequired(S.totalLevel);
+          if(S.autoCfg.useScroll&&S.scrolls>=req&&req>0){
+            S.scrolls-=req;playTone('restore');
+            S.autoStats.restoredCount++;S.autoStats.scrollsUsed+=req;
+            S.noFailInvalid=true;checkQuests('restore_used',{});
+            addLog(`💔 강화 실패 → 📜 주문서 ${req}개 자동 사용! (+${S.totalLevel} 유지) [무결점 퀘스트 무효]`,'lblue');
+          } else applyDestruction(def,true);
+          updateAll();
+          if(S.autoOn) scheduleAuto();
+          else if(S.pendingStop){S.pendingStop=false;showAutoReport();}
+        }
+      },700);
+      return;
+    }
+
     if(success){
       const nextLvl=lvl+1;
       const nextDef=getSwordDef(nextLvl);
@@ -1420,16 +2498,22 @@ function doEnhance(isAuto){
         if(isMax){
           launchFireworks();
           addLog(`🏆 신화의 검 +30 달성! 최고 단계!`,'lok');
+          gainXP(10,'강화 성공');
+          checkQuests('success',{level:S.totalLevel});
           if(!isAuto) showSimpleResult('ok','🏆','신화 달성!',`신화의 검 +30!\n최고 강화 단계를 달성했습니다!`);
           launchPtcl('🏆');launchPtcl('🌟');
           if(S.autoOn||S.pendingStop){S.autoOn=false;S.pendingStop=false;updateEnhUI();showAutoReport();}
         } else {
           if(isAscend){
             addLog(`🌟 ${def.name} → ${nextDef.name} 승급! (+${S.totalLevel})`,'lok');
-            if(!isAuto) showSimpleResult('ok','🌟','승급 성공!',`${def.name}이(가)\n${nextDef.name}으로 진화했습니다!\n+${S.totalLevel} 달성!`);
+            gainXP(10,'강화 성공');
+            checkQuests('success',{level:S.totalLevel});
+            // 승급 성공 팝업 없음
             launchPtcl('🌟');
           } else {
             addLog(`✨ +${S.totalLevel} 강화 성공!`,'lok');
+            gainXP(10,'강화 성공');
+            checkQuests('success',{level:S.totalLevel});
             // manual success: no popup (just log + particle)
             launchPtcl('✨');
           }
@@ -1462,7 +2546,9 @@ function doEnhance(isAuto){
           if(S.autoCfg.useScroll&&S.scrolls>=req&&req>0){
             S.scrolls-=req;playTone('restore');
             S.autoStats.restoredCount++;S.autoStats.scrollsUsed+=req;
-            addLog(`💔 강화 실패 → 📜 주문서 ${req}개 자동 사용! (+${S.totalLevel} 유지)`,'lblue');
+            S.noFailInvalid=true;
+            checkQuests('restore_used',{});
+            addLog(`💔 강화 실패 → 📜 주문서 ${req}개 자동 사용! (+${S.totalLevel} 유지) [무결점 퀘스트 무효]`,'lblue');
           } else {
             applyDestruction(def,true);
           }
@@ -1501,7 +2587,9 @@ function askRestore(def,req){
     document.getElementById('rcfmOverlay').classList.remove('show');
     if(use){
       S.scrolls-=req;playTone('restore');
-      addLog(`💔 강화 실패 → 📜 복구 주문서 ${req}개 발동! (+${S.totalLevel} 유지)`,'lblue');
+      S.noFailInvalid=true; // no_fail 퀘스트 무효화
+      checkQuests('restore_used',{});
+      addLog(`💔 강화 실패 → 📜 복구 주문서 ${req}개 발동! (+${S.totalLevel} 유지) [무결점 퀘스트 무효]`,'lblue');
       showSimpleResult('fail','📜','복구 성공',`강화가 실패했지만\n복구 주문서 ${req}개로 검을 지켜냈습니다!`);
     } else applyDestruction(def,false);
     updateAll();
@@ -1512,7 +2600,9 @@ function applyDestruction(def,isAuto){
   const prevLvl=S.totalLevel;
   S.totalLevel=0;
   S.orbUse=false;
+  S.noFailInvalid=false; // reset so no_fail quests can restart fresh
   if(isAuto) S.autoStats.destroyedCount++;
+  checkQuests('fail',{level:prevLvl});
   addLog(`💀 ${def.name} +${prevLvl} 파괴! → +0으로 초기화`,'lfail');
   if(!isAuto) showSimpleResult('fail','💀','파괴!',`${def.name} +${prevLvl}이(가) 파괴되었습니다.\n검이 +0으로 초기화됩니다.`);
   launchPtcl('💥');
@@ -1552,8 +2642,8 @@ function openSellCfm(){
 function closeCfm(){document.getElementById('cfmOverlay').classList.remove('show');}
 function doSell(){
   const price=calcSellPrice(S.totalLevel);const def=getSwordDef(S.totalLevel);const lvl=S.totalLevel;
-  S.gold+=price;addLog(`💰 ${def.name} +${lvl} 판매 → ${price.toLocaleString()}골드 획득`,'lok');
-  playTone('sell');launchPtcl('💰');S.totalLevel=0;S.orbUse=false;closeCfm();
+  S.gold+=price;S.qt.sells++;checkQuests('sell',{});addLog(`💰 ${def.name} +${lvl} 판매 → ${price.toLocaleString()}골드 획득`,'lok');
+  playTone('sell');launchPtcl('💰');S.totalLevel=0;S.orbUse=false;S.noFailInvalid=false;closeCfm();
   showSimpleResult('ok','💰','판매 완료!',`${price.toLocaleString()} 골드를 획득했습니다!`);updateAll();
 }
 
